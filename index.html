@@ -333,7 +333,8 @@
       .about-visual { order: -1; }
       .om-row.cols-4 { grid-template-columns: repeat(2,1fr); }
       .members-grid { grid-template-columns: 1fr 1fr; }
-      .member-overlay { opacity: 1; }
+      .member-overlay { opacity: 1; padding: 16px 12px 8px; }
+      .member-overlay .member-name { font-size: 0.78rem; }
     }
     @media (max-width: 768px) {
       header { padding: 12px 18px; }
@@ -354,14 +355,15 @@
       .nav-cards { grid-template-columns: 1fr 1fr; }
       .om-row.cols-2, .om-row.cols-3, .om-row.cols-4 { grid-template-columns: 1fr; }
       .members-grid { grid-template-columns: 1fr 1fr; }
-      .member-overlay { opacity: 1; }
+      .member-overlay { opacity: 1; padding: 16px 12px 8px; }
+      .member-overlay .member-name { font-size: 0.78rem; }
       footer { padding: 22px 18px; flex-direction: column; align-items: flex-start; }
     }
     @media (max-width: 480px) {
       .nav-cards { grid-template-columns: 1fr; }
       .stats-bar { flex-wrap: wrap; }
       .stat-item { min-width: 50%; border-bottom: 1px solid rgba(255,255,255,0.15); }
-      .members-grid { grid-template-columns: 1fr 1fr; }
+      .members-grid { grid-template-columns: 1fr; }
       .hero { height: 65vh; min-height: 380px; }
       .hero h1 { font-size: 1.7rem; }
       .hero-eyebrow { font-size: 0.58rem; letter-spacing: 0.08em; }
@@ -813,7 +815,7 @@ function memberCarousel(dir) {
   var stepW = cardW + 16;
 
   function moveTo(p, animate) {
-    track.style.transition = animate ? 'transform 0.45s cubic-bezier(.4,0,.2,1)' : 'none';
+    track.style.transition = animate ? 'transform 0.28s cubic-bezier(.4,0,.2,1)' : 'none';
     track.style.transform = 'translateX(-' + (p * stepW) + 'px)';
     track._pos = p;
   }
@@ -842,6 +844,7 @@ function newsNav(dir) {
   var visible = window.innerWidth < 600 ? 1 : window.innerWidth < 900 ? 2 : 3;
   var max = Math.max(0, track.querySelectorAll('.news-card').length - visible);
   window._newsPos = Math.max(0, Math.min(max, window._newsPos + dir));
+  track.style.transition = 'transform 0.28s cubic-bezier(.4,0,.2,1)';
   track.style.transform = 'translateX(-' + (window._newsPos * 320) + 'px)';
 }
 
