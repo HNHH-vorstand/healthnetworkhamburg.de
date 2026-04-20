@@ -45,6 +45,7 @@
       --text: #1a1a1a; --text-leicht: #555;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { overflow-x: hidden; }
     body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--weiss); overflow-x: hidden; }
     h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; }
 
@@ -175,7 +176,7 @@
     @media (max-width: 768px) {
       header { padding: 12px 18px; }
       .logo-area img { height: 44px; }
-      nav { display: none; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: var(--weiss); border-top: 1px solid var(--grau-mittel); box-shadow: 0 8px 20px rgba(0,0,0,0.1); padding: 14px 0; }
+      nav { display: none; flex-direction: column; gap: 0; position: fixed; top: 0; left: 0; right: 0; width: 100%; background: var(--weiss); border-top: 1px solid var(--grau-mittel); box-shadow: 0 8px 20px rgba(0,0,0,0.1); padding: 14px 0; z-index: 99; margin-top: 75px; }
       nav.open { display: flex; }
       nav a { padding: 11px 22px; border-bottom: 1px solid var(--grau-mittel); }
       .nav-cta { margin: 10px 22px 4px !important; width: calc(100% - 44px); text-align: center; }
@@ -184,6 +185,7 @@
       main { padding: 0 16px 60px; }
       .linkedin-compact { flex-direction: column; }
       footer { padding: 22px 18px; flex-direction: column; align-items: flex-start; }
+      .section-header h2 { white-space: normal; font-size: 1.4rem; }
     }
   
     /* PROSE (Impressum / Datenschutz) */
