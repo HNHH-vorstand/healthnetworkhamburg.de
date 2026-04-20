@@ -108,8 +108,19 @@
     .past-event-body.open { display: block; }
 
     /* PDF EMBED */
-    .pdf-embed { border: 1px solid var(--grau-mittel); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+    .pdf-embed { border: 1px solid var(--grau-mittel); border-radius: 8px; overflow: hidden; margin-bottom: 16px; max-width: 100%; position: relative; }
     .pdf-embed iframe { width: 100%; height: 600px; border: none; display: block; }
+    .pdf-embed-overlay { display: none; }
+    @media (max-width: 600px) {
+      .pdf-embed { height: 420px; }
+      .pdf-embed iframe {
+        width: 150%;
+        height: 630px;
+        transform: scale(0.667);
+        transform-origin: top left;
+        margin-bottom: -210px;
+      }
+    }
     .pdf-note { font-size: 0.8rem; color: var(--text-leicht); margin-top: 8px; font-style: italic; }
 
     /* GALLERY */
