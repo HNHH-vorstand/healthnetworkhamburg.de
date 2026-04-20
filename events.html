@@ -114,6 +114,9 @@
 
     /* GALLERY */
     .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+    @media (max-width: 600px) {
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    }
     .gallery-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; cursor: pointer; transition: opacity 0.2s, transform 0.2s; display: block; }
     .gallery-img:hover { opacity: 0.85; transform: scale(1.02); }
     .gallery-loading { padding: 24px; text-align: center; color: var(--text-leicht); font-size: 0.9rem; }
