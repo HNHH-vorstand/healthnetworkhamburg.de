@@ -333,6 +333,7 @@
       .about-visual { order: -1; }
       .om-row.cols-4 { grid-template-columns: repeat(2,1fr); }
       .members-grid { grid-template-columns: 1fr 1fr; }
+      .member-overlay { opacity: 1; }
     }
     @media (max-width: 768px) {
       header { padding: 12px 18px; }
@@ -352,13 +353,15 @@
       .section-header { margin: 48px 0 22px; }
       .nav-cards { grid-template-columns: 1fr 1fr; }
       .om-row.cols-2, .om-row.cols-3, .om-row.cols-4 { grid-template-columns: 1fr; }
-      .members-grid { grid-template-columns: 1fr; }
+      .members-grid { grid-template-columns: 1fr 1fr; }
+      .member-overlay { opacity: 1; }
       footer { padding: 22px 18px; flex-direction: column; align-items: flex-start; }
     }
     @media (max-width: 480px) {
       .nav-cards { grid-template-columns: 1fr; }
       .stats-bar { flex-wrap: wrap; }
       .stat-item { min-width: 50%; border-bottom: 1px solid rgba(255,255,255,0.15); }
+      .members-grid { grid-template-columns: 1fr 1fr; }
       .hero { height: 65vh; min-height: 380px; }
       .hero h1 { font-size: 1.7rem; }
       .hero-eyebrow { font-size: 0.58rem; letter-spacing: 0.08em; }
@@ -387,7 +390,7 @@
 </header>
 
 <!-- HERO – 8 slides: group, w061, w072, w077, w085, w128, presentation, selfie -->
-<section class="hero">
+<section class="hero" id="heroCarousel">
   <div class="carousel-slide active"><img src="images/homepage/hero-01.jpg" alt="Health Network Hamburg – Gemeinschaft" /></div>
   <div class="carousel-slide"><img src="images/homepage/hero-02.jpg" alt="Health Network Hamburg – Workshop"  loading="lazy" /></div>
   <div class="carousel-slide"><img src="images/homepage/hero-03.jpg" alt="Health Network Hamburg – Networking"  loading="lazy" /></div>
@@ -716,7 +719,7 @@
       </svg>
       <h3>Neuigkeiten</h3>
     </div>
-    <div class="news-track-wrap">
+    <div class="news-track-wrap" id="newsCarousel">
       <div class="news-track" id="newsTrack">
         <!-- Filled by JS from Google Sheets or fallback -->
       </div>
@@ -1022,6 +1025,45 @@ fetch('https://docs.google.com/spreadsheets/d/1inAiEvDK3ORJUCkBkaTZVbK8PWJ7U8gIl
   .catch(function() {
     var track = document.getElementById('newsTrack');
     if (track) track.innerHTML = '';
-  });</script>
+  });
+  // ── TOUCH / SWIPE SUPPORT ──
+  function addSwipe(elementId, onLeft, onRight) {
+    var el = document.getElementById(elementId);
+    if (!el) return;
+    var startX = 0, startY = 0, isDragging = false;
+    el.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isDragging = true;
+    }, { passive: true });
+    el.addEventListener('touchend', function(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      var dx = e.changedTouches[0].clientX - startX;
+      var dy = e.changedTouches[0].clientY - startY;
+      if (Math.abs(dx) < 30 || Math.abs(dx) < Math.abs(dy)) return;
+      if (dx < 0) onLeft();
+      else onRight();
+    }, { passive: true });
+  }
+
+  // Members carousel swipe
+  addSwipe('membersCarousel',
+    function() { memberCarousel(1); },
+    function() { memberCarousel(-1); }
+  );
+
+  // News carousel swipe
+  addSwipe('newsCarousel',
+    function() { newsNav(1); },
+    function() { newsNav(-1); }
+  );
+
+  // Hero carousel swipe
+  addSwipe('heroCarousel',
+    function() { heroGo(heroCur + 1); },
+    function() { heroGo(heroCur - 1); }
+  );
+</script>
 </body>
 </html>
