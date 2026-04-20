@@ -48,7 +48,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { overflow-x: hidden; }
-    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--weiss); }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--weiss); overflow-x: hidden; }
     h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; }
 
     /* HEADER */
@@ -60,6 +60,7 @@
     }
     .logo-area { display: flex; align-items: center; gap: 14px; text-decoration: none; }
     .logo-area img { height: 56px; width: auto; }
+    img:not(header img) { max-width: 100%; }
     .logo-text .name { font-family: 'Montserrat',sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--rot); letter-spacing: -0.01em; }
     .logo-text .tagline { font-size: 0.68rem; color: var(--text-leicht); letter-spacing: 0.06em; text-transform: uppercase; }
     nav { display: flex; gap: 24px; align-items: center; }
@@ -344,6 +345,8 @@
       .hero { height: 75vh; min-height: 460px; }
       .hero-content { padding: 0 22px; }
       .hero h1 { font-size: 2rem; }
+      .hero-eyebrow { white-space: nowrap; font-size: 0.62rem; letter-spacing: 0.1em; }
+      .carousel-slide img { object-position: center 20%; }
       .carousel-dots { left: 22px; }
       main { padding: 0 16px 60px; }
       .section-header { margin: 48px 0 22px; }
@@ -356,6 +359,11 @@
       .nav-cards { grid-template-columns: 1fr; }
       .stats-bar { flex-wrap: wrap; }
       .stat-item { min-width: 50%; border-bottom: 1px solid rgba(255,255,255,0.15); }
+      .hero { height: 65vh; min-height: 380px; }
+      .hero h1 { font-size: 1.7rem; }
+      .hero-eyebrow { font-size: 0.58rem; letter-spacing: 0.08em; }
+      .hero-eyebrow::before { width: 16px; }
+      .carousel-slide img { object-position: center 15%; }
     }
   </style>
 </head>
