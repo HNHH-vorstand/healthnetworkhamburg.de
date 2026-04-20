@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="googlebot" content="noindex, nofollow" />
+-->
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Aktuelles aus dem Health Network Hamburg e.V. – Berichte, Ankündigungen und Einblicke rund um Healthcare und Innovation in Hamburg." />
+  <link rel="canonical" href="https://healthnetworkhamburg.de/neuigkeiten" />
+  <meta property="og:title" content="Health Network Hamburg e.V." />
+  <meta property="og:description" content="Die Brückenplattform für Gesundheitsinnovation in Hamburg." />
+  <meta property="og:image" content="https://healthnetworkhamburg.de/images/og-preview.jpg" />
+  <meta property="og:url" content="https://healthnetworkhamburg.de/neuigkeiten" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Health Network Hamburg e.V.",
+    "url": "https://healthnetworkhamburg.de",
+    "email": "vorstand@healthnetworkhamburg.de",
+    "description": "Brückenplattform für Gesundheitsinnovation in der Metropolregion Hamburg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hamburg",
+      "addressCountry": "DE"
+    }
+  }
+  </script>
+  <title>Neuigkeiten – Health Network Hamburg e.V.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="/hnhh_favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/hnhh_favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <style>
+    :root {
+      --rot: #C8102E; --rot-dunkel: #a00d25; --rot-hell: #f5e8eb;
+      --weiss: #FFFFFF; --grau-leicht: #f7f7f7; --grau-mittel: #e0e0e0;
+      --text: #1a1a1a; --text-leicht: #555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--weiss); overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; }
+
+    /* HEADER */
+    header { background: var(--weiss); border-bottom: 3px solid var(--rot); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+    .logo-area { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-area img { height: 56px; width: auto; }
+    .logo-text .name { font-family: 'Montserrat',sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--rot); letter-spacing: -0.01em; display: block; }
+    .logo-text .tagline { font-size: 0.68rem; color: var(--text-leicht); letter-spacing: 0.06em; text-transform: uppercase; display: block; }
+    nav { display: flex; gap: 24px; align-items: center; }
+    nav a { text-decoration: none; color: var(--text); font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: var(--rot); }
+    nav a.active { color: var(--rot); }
+    .nav-cta { background: var(--rot) !important; color: var(--weiss) !important; padding: 8px 18px !important; border-radius: 5px !important; font-weight: 700 !important; transition: background 0.2s, transform 0.15s !important; }
+    .nav-cta:hover { background: var(--rot-dunkel) !important; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); }
+
+    /* HERO */
+    .hero { background: var(--grau-leicht); border-bottom: 3px solid var(--rot); padding: 56px 40px 48px; }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+    .hero-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rot); margin-bottom: 12px; font-family: 'Inter', sans-serif; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px; }
+    .hero p { font-size: 1.05rem; color: var(--text-leicht); line-height: 1.7; }
+
+    /* MAIN */
+    main { max-width: 760px; margin: 0 auto; padding: 0 24px 80px; }
+
+    /* SECTION HEADER */
+    .section-header { display: flex; align-items: center; gap: 16px; margin: 68px 0 28px; }
+    .section-header h2 { font-size: 1.75rem; font-weight: 700; white-space: nowrap; letter-spacing: -0.01em; }
+    .section-line { flex: 1; height: 2px; background: var(--rot); opacity: 0.2; }
+
+    /* NEWS ARTICLE – featured (latest) */
+    .news-featured {
+      background: var(--weiss); border: 1px solid var(--grau-mittel);
+      border-radius: 12px; overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      margin-bottom: 32px;
+    }
+    .news-featured:hover { border-color: var(--rot); transform: translateY(-2px); }
+    .news-featured .news-img {
+      width: 100%; aspect-ratio: 16/7; object-fit: cover; display: block;
+    }
+    .news-featured .news-img-carousel {
+      width: 100%; aspect-ratio: 16/7; position: relative; overflow: hidden;
+    }
+    .news-featured .news-img-carousel img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+    .news-featured-body { padding: 28px 28px 24px; }
+    .news-featured-body .news-date { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rot); margin-bottom: 8px; }
+    .news-featured-body h3 { font-size: 1.45rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; margin-bottom: 12px; }
+    .news-featured-body p { font-size: 0.97rem; color: var(--text-leicht); line-height: 1.75; }
+
+
+    /* NEWS ARTICLE – regular */
+    .news-item {
+      border-bottom: 1px solid var(--grau-mittel);
+      padding: 24px 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      cursor: default;
+      transition: background 0.15s;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-item:hover { background: var(--grau-leicht); }
+    .news-featured:hover { border-color: var(--rot); }
+    .news-item.has-img { grid-template-columns: 180px 1fr; gap: 20px; align-items: start; }
+    .news-item-img { border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; }
+    .news-item-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .news-item-date { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rot); margin-bottom: 6px; }
+    .news-item-title { font-family: 'Montserrat',sans-serif; font-size: 1.05rem; font-weight: 700; line-height: 1.3; margin-bottom: 8px; color: var(--text); }
+    .news-item-text { font-size: 0.9rem; color: var(--text-leicht); line-height: 1.68; display: none; }
+    .news-item-text.expanded { display: block; }
+    .news-item-toggle {
+      display: inline-flex; align-items: center; gap: 5px;
+      color: var(--rot); font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; margin-top: 8px; background: none; border: none;
+      padding: 0; font-family: 'Inter', sans-serif;
+      transition: opacity 0.2s;
+    }
+    .news-item-toggle:hover { opacity: 0.7; }
+    .news-item-toggle .arrow { transition: transform 0.25s; display: inline-block; }
+    .news-item-toggle.open .arrow { transform: rotate(180deg); }
+
+    /* ACCORDION für ältere News */
+    .older-accordion {
+      border: 1px solid var(--grau-mittel); border-radius: 10px;
+      overflow: hidden; margin-top: 8px;
+    }
+    .older-accordion-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px; cursor: pointer; background: var(--grau-leicht);
+      user-select: none;
+    }
+    .older-accordion-header:hover { background: #efefef; }
+    .older-accordion-header h3 { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-leicht); }
+    .older-accordion-toggle { font-size: 1rem; color: var(--text-leicht); transition: transform 0.25s; }
+    .older-accordion-toggle.open { transform: rotate(180deg); }
+    .older-accordion-body { display: none; padding: 0 20px; }
+    .older-accordion-body.open { display: block; }
+
+
+    /* NEWS OPEN BUTTON */
+    .news-open-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      margin-top: 12px; background: none; border: none;
+      color: var(--rot); font-size: 0.85rem; font-weight: 600;
+      cursor: pointer; padding: 0; font-family: 'Inter', sans-serif;
+      transition: gap 0.15s;
+    }
+    .news-open-btn:hover { gap: 9px; }
+    .news-item-content { flex: 1; min-width: 0; }
+    .news-lead-sm { font-size: 0.88rem; color: var(--text-leicht); line-height: 1.6; margin-top: 5px; }
+
+    /* ARTICLE MODAL */
+    .article-modal {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.55); z-index: 500;
+      align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .article-modal.open { display: flex; }
+    .article-modal-inner {
+      background: var(--weiss); border-radius: 12px;
+      max-width: 680px; width: 100%; max-height: 88vh;
+      overflow-y: auto; padding: 36px 40px;
+      position: relative;
+    }
+    .article-modal-close {
+      position: absolute; top: 16px; right: 20px;
+      background: none; border: none; font-size: 1.6rem;
+      cursor: pointer; color: var(--text-leicht); line-height: 1;
+      transition: color 0.15s;
+    }
+    .article-modal-close:hover { color: var(--rot); }
+    .article-modal-date {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--rot); margin-bottom: 8px;
+    }
+    .article-modal-title {
+      font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em;
+      line-height: 1.25; margin-bottom: 16px; color: var(--text);
+    }
+    .article-modal-lead p {
+      font-size: 1rem; font-weight: 600; color: var(--text);
+      line-height: 1.7; margin-bottom: 10px;
+    }
+    .article-modal-body p {
+      font-size: 0.95rem; color: var(--text-leicht);
+      line-height: 1.78; margin-bottom: 10px;
+    }
+    .article-modal-body br { display: block; content: ""; margin-bottom: 4px; }
+    .article-modal-gallery {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 8px; margin-top: 20px;
+    }
+    .article-modal-gallery img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      border-radius: 6px; cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .article-modal-gallery img:hover { opacity: 0.85; transform: scale(1.02); }
+
+    /* IMAGE LIGHTBOX */
+    .img-lightbox {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.92); z-index: 600;
+      align-items: center; justify-content: center;
+    }
+    .img-lightbox.open { display: flex; }
+    .img-lightbox img {
+      max-width: 90vw; max-height: 88vh;
+      object-fit: contain; border-radius: 4px;
+    }
+    .lightbox-close {
+      position: fixed; top: 18px; right: 24px;
+      background: none; border: none; color: white;
+      font-size: 2rem; cursor: pointer; opacity: 0.8; line-height: 1;
+    }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-nav {
+      position: fixed; top: 50%; transform: translateY(-50%);
+      background: none; border: none; color: white;
+      font-size: 3rem; cursor: pointer; opacity: 0.7; padding: 12px;
+    }
+    .lightbox-nav:hover { opacity: 1; }
+    .lightbox-prev { left: 8px; }
+    .lightbox-next { right: 8px; }
+
+    @media (max-width: 600px) {
+      .article-modal-inner { padding: 24px 20px; }
+      .article-modal-title { font-size: 1.2rem; }
+    }
+    /* LOADING STATE */
+    .news-lead {
+      font-size: 1rem; font-weight: 600; color: var(--text);
+      line-height: 1.7; margin-bottom: 12px;
+    }
+    .news-body {
+      font-size: 0.95rem; font-weight: 400; color: var(--text-leicht);
+      line-height: 1.75; margin-top: 0;
+    }
+    .news-featured-body .news-lead { font-size: 1.05rem; }
+    .news-loading {
+      padding: 48px 0; text-align: center; color: var(--text-leicht); font-size: 0.95rem;
+    }
+    .news-loading span { display: inline-block; animation: pulse 1.2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity:0.4; } 50% { opacity:1; } }
+
+    /* FOOTER */
+    footer { background: var(--text); color: rgba(255,255,255,0.65); padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.82rem; }
+    .footer-links { display: flex; gap: 20px; align-items: center; }
+    .footer-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--weiss); }
+    .footer-li svg { width: 20px; height: 20px; fill: #0A66C2; display: block; }
+
+    @media (max-width: 768px) {
+      header { padding: 12px 18px; }
+      .logo-area img { height: 44px; }
+      nav { display: none; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: var(--weiss); border-top: 1px solid var(--grau-mittel); box-shadow: 0 8px 20px rgba(0,0,0,0.1); padding: 14px 0; }
+      nav.open { display: flex; }
+      nav a { padding: 11px 22px; border-bottom: 1px solid var(--grau-mittel); }
+      .nav-cta { margin: 10px 22px 4px !important; width: calc(100% - 44px); text-align: center; }
+      .hamburger { display: flex; }
+      .hero { padding: 36px 20px 32px; }
+      main { padding: 0 16px 60px; }
+      .news-item.has-img { grid-template-columns: 120px 1fr; gap: 14px; }
+      footer { padding: 22px 18px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo-area">
+    <img src="images/homepage/hnhh-logo.svg" alt="Health Network Hamburg e.V. Logo" />
+    <div class="logo-text">
+      <span class="name">Health Network Hamburg e.V.</span>
+      <span class="tagline">Gemeinsam für Gesundheit</span>
+    </div>
+  </a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  <nav id="nav">
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="events.html">Events</a>
+    <a href="neuigkeiten.html">Neuigkeiten</a>
+    <a href="mitglied-werden.html" class="nav-cta">Mitglied werden</a>
+  </nav>
+</header>
+
+<div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/heros/news.jpg'); background-size: cover; background-position: center top; border-bottom: none; ">
+  <div class="hero-inner">
+    <div class="hero-eyebrow" style="color: rgba(255,255,255,0.8);">#HNHH · Neuigkeiten</div>
+    <h1 style="color: white;">Neuigkeiten</h1>
+    <p style="color: rgba(255,255,255,0.85);">Aktuelle Berichte, Ankündigungen und Einblicke aus dem Health Network Hamburg.</p>
+  </div>
+</div>
+
+<main id="newsMain">
+  <div class="news-loading"><span>Neuigkeiten werden geladen…</span></div>
+</main>
+
+<footer>
+  <div class="footer-copy">&copy; <span id="year"></span> Health Network Hamburg e.V.</div>
+  <div class="footer-links">
+    <a href="kontakt.html">Kontakt</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="https://www.linkedin.com/groups/13128513/" target="_blank" class="footer-li">
+      <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script data-cfasync="false">
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function toggleMenu() {
+    document.getElementById('nav').classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    var nav = document.getElementById('nav'), h = document.getElementById('hamburger');
+    if (nav && h && !nav.contains(e.target) && !h.contains(e.target)) nav.classList.remove('open');
+  });
+
+  // ── IMAGE LOADING ──
+  function tryLoadImages(code, callback) {
+    var imgs = [];
+    var base = 'images/news/' + code + '/' + code;
+    function tryNext(n) {
+      if (n > 8) { callback(imgs); return; }
+      var num = (n < 10 ? '0' : '') + n;
+      var img = new Image();
+      img.onload = function() { imgs.push(base + '-' + num + '.jpg'); tryNext(n + 1); };
+      img.onerror = function() { callback(imgs); };
+      img.src = base + '-' + num + '.jpg';
+    }
+    tryNext(1);
+  }
+
+
+  // Convert plain text with newlines + URLs to HTML
+  function formatText(text) {
+    if (!text) return '';
+    // Escape HTML entities
+    var safe = text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+    // Convert URLs to clickable links
+    safe = safe.replace(/(https?:\/\/[^\s<]+)/g, function(url) {
+      return '<a href="' + url + '" target="_blank" rel="noopener" style="color:var(--rot);text-decoration:underline;">' + url + '</a>';
+    });
+    // Normalize line endings: \r\n → \n
+    safe = safe.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    // Leerzeilen (eine oder mehrere Leerzeilen = neue Paragraph)
+    // Eine Leerzeile = Zeile die nur Leerzeichen enthält
+    safe = safe.replace(/\n[ \t]*\n+/g, '\n\n');
+    // Split into paragraphs on double newline
+    var paragraphs = safe.split('\n\n');
+    var html = paragraphs.map(function(para) {
+      // Within each paragraph, single newlines become <br>
+      return '<p>' + para.replace(/\n/g, '<br>') + '</p>';
+    }).join('');
+    return html;
+  }
+
+  // ── FEATURED NEWS (latest, big) ──
+  function buildFeatured(item) {
+    var el = document.createElement('div');
+    el.className = 'news-featured';
+    if (item.code) el.id = item.code;
+    el.style.cursor = 'pointer';
+    el.onclick = function(e) { if (!e.target.closest('button') && !e.target.closest('a') && !e.target.closest('[data-nc]')) openArticleModal(e, el); };
+    var imgHtml = '';
+    if (item.imgs && item.imgs.length === 1) {
+      imgHtml = '<img class="news-img" src="' + item.imgs[0] + '" alt="' + item.title + '" />';
+    } else if (item.imgs && item.imgs.length > 1) {
+      var id = 'nf' + Math.random().toString(36).substr(2,5);
+      imgHtml = '<div class="news-img-carousel" id="' + id + '" data-cur="0">';
+      item.imgs.forEach(function(u,i) {
+        imgHtml += '<img src="' + u + '" style="opacity:' + (i===0?1:0) + ';transition:opacity 0.4s;" />';
+      });
+      imgHtml += '<div style="position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:6px;z-index:2;">';
+      item.imgs.forEach(function(_,i) {
+        imgHtml += '<span data-nc="' + id + '" data-idx="' + i + '" style="width:8px;height:8px;border-radius:50%;background:' + (i===0?'white':'rgba(255,255,255,0.5)') + ';cursor:pointer;display:inline-block;"></span>';
+      });
+      imgHtml += '</div>';
+      imgHtml += '<button data-nc="' + id + '" data-dir="prev" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.35);border:none;color:white;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:16px;z-index:2;display:flex;align-items:center;justify-content:center;">&#8249;</button>';
+      imgHtml += '<button data-nc="' + id + '" data-dir="next" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.35);border:none;color:white;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:16px;z-index:2;display:flex;align-items:center;justify-content:center;">&#8250;</button>';
+      imgHtml += '</div>';
+    }
+    var linkStart = item.link && item.link !== '#' ? '<a href="' + item.link + '" style="text-decoration:none;color:inherit;">' : '<div>';
+    var linkEnd = item.link && item.link !== '#' ? '</a>' : '</div>';
+    var safeShort = item.shortText ? formatText(item.shortText) : '';
+    var safeText  = item.text ? formatText(item.text) : '';
+    el.innerHTML = imgHtml +
+      '<div class="news-featured-body">' +
+      '<div class="news-date">' + item.date + '</div>' +
+      '<h3>' + item.title + '</h3>' +
+      (safeShort ? '<div class="news-lead">' + safeShort + '</div>' : '') +
+      (safeText  ? '<div class="news-body">' + safeText + '</div>' : '') +
+      '<button class="news-open-btn" onclick="openArticleModal(event, this)">Artikel lesen &#8594;</button>' +
+      '</div>';
+    el.setAttribute('data-code', item.code||'');
+    el.setAttribute('data-date', item.date||'');
+    el.setAttribute('data-title', item.title||'');
+    el.setAttribute('data-short', item.shortText||'');
+    el.setAttribute('data-text', item.text||'');
+    el.setAttribute('data-imgs', JSON.stringify(item.imgs||[]));
+    return el;
+  }
+
+  // ── REGULAR NEWS ITEM (collapsible text) ──
+  function buildNewsItemImgs(imgs, title) {
+    if (!imgs || imgs.length === 0) return '';
+    if (imgs.length === 1) {
+      return '<div class="news-item-img"><img src="' + imgs[0] + '" alt="' + title + '" /></div>';
+    }
+    var id = 'ni' + Math.random().toString(36).substr(2,5);
+    var html = '<div class="news-item-img"><div id="' + id + '" data-cur="0" style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:8px;">';
+    imgs.forEach(function(u, i) {
+      html += '<img src="' + u + '" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:' + (i===0?1:0) + ';transition:opacity 0.4s;" />';
+    });
+    html += '<div style="position:absolute;bottom:5px;left:0;right:0;display:flex;justify-content:center;gap:4px;z-index:2;">';
+    imgs.forEach(function(_,i) {
+      html += '<span data-nc="' + id + '" data-idx="' + i + '" style="width:5px;height:5px;border-radius:50%;background:' + (i===0?'white':'rgba(255,255,255,0.5)') + ';cursor:pointer;display:inline-block;"></span>';
+    });
+    html += '</div>';
+    html += '<button data-nc="' + id + '" data-dir="prev" style="position:absolute;left:4px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.3);border:none;color:white;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:11px;z-index:2;display:flex;align-items:center;justify-content:center;">&#8249;</button>';
+    html += '<button data-nc="' + id + '" data-dir="next" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.3);border:none;color:white;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:11px;z-index:2;display:flex;align-items:center;justify-content:center;">&#8250;</button>';
+    html += '</div></div>';
+    return html;
+  }
+
+  function buildNewsItem(item, idx) {
+    var el = document.createElement('div');
+    el.className = 'news-item' + (item.imgs && item.imgs.length > 0 ? ' has-img' : '');
+    if (item.code) el.id = item.code;
+    el.style.cursor = 'pointer';
+    el.onclick = function(e) { if (!e.target.closest('button') && !e.target.closest('a') && !e.target.closest('[data-nc]')) openArticleModal(e, el); };
+    var itemId = 'ni-' + idx;
+
+    var imgHtml = buildNewsItemImgs(item.imgs, item.title);
+
+    el.innerHTML = imgHtml +
+      '<div class="news-item-content">' +
+      '<div class="news-item-date">' + item.date + '</div>' +
+      '<div class="news-item-title">' + item.title + '</div>' +
+      (item.shortText ? '<div class="news-lead-sm">' + item.shortText + '</div>' : '') +
+      '<button class="news-open-btn" onclick="openArticleModal(event, this)">Artikel lesen &#8594;</button>' +
+      '</div>';
+    el.setAttribute('data-code', item.code||'');
+    el.setAttribute('data-date', item.date||'');
+    el.setAttribute('data-title', item.title||'');
+    el.setAttribute('data-short', item.shortText||'');
+    el.setAttribute('data-text', item.text||'');
+    el.setAttribute('data-imgs', JSON.stringify(item.imgs||[]));
+    return el;
+  }
+
+  function toggleNewsItem(id) {
+    var txt = document.getElementById('txt-' + id);
+    var btn = document.getElementById('btn-' + id);
+    if (!txt || !btn) return;
+    txt.classList.toggle('expanded');
+    btn.classList.toggle('open');
+    btn.innerHTML = txt.classList.contains('expanded')
+      ? 'Weniger <span class="arrow" style="transform:rotate(180deg);display:inline-block;">▾</span>'
+      : 'Weiterlesen <span class="arrow">▾</span>';
+  }
+
+  // ── IMAGE CAROUSEL CLICKS ──
+  document.addEventListener('click', function(e) {
+    var nc = e.target.getAttribute('data-nc');
+    if (!nc) return;
+    var wrap = document.getElementById(nc);
+    if (!wrap) return;
+    var imgs = wrap.querySelectorAll('img');
+    var dots = wrap.querySelectorAll('[data-nc][data-idx]');
+    var cur = parseInt(wrap.getAttribute('data-cur')) || 0;
+    var dir = e.target.getAttribute('data-dir');
+    var ix  = e.target.getAttribute('data-idx');
+    var next = dir === 'prev' ? (cur-1+imgs.length)%imgs.length
+             : dir === 'next' ? (cur+1)%imgs.length
+             : parseInt(ix);
+    imgs[cur].style.opacity = 0; imgs[next].style.opacity = 1;
+    dots.forEach(function(d) { d.style.background = parseInt(d.getAttribute('data-idx'))===next?'white':'rgba(255,255,255,0.5)'; });
+    wrap.setAttribute('data-cur', next);
+  });
+
+  // ── DATE HELPERS ──
+  function parseDate(dateStr) {
+    // DD.MM.YYYY
+    var parts = dateStr.split('.');
+    if (parts.length === 3) return new Date(parseInt(parts[2]), parseInt(parts[1])-1, parseInt(parts[0]));
+    return new Date(dateStr);
+  }
+
+  function isThisMonth(dateStr) {
+    var d = parseDate(dateStr);
+    var now = new Date();
+    return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth();
+  }
+
+  // ── RENDER ALL NEWS ──
+  function renderAllNews(items) {
+    var main = document.getElementById('newsMain');
+    if (!items.length) {
+      main.innerHTML = '<p style="padding:48px 0;text-align:center;color:var(--text-leicht);">Noch keine Neuigkeiten vorhanden.</p>';
+      return;
+    }
+
+    // Sort by date descending
+    items.sort(function(a, b) { return parseDate(b.date) - parseDate(a.date); });
+
+    var latest = [items[0]];
+    var thisMonth = items.slice(1).filter(function(i) { return isThisMonth(i.date); });
+    var older = items.slice(1).filter(function(i) { return !isThisMonth(i.date); });
+
+    main.innerHTML = '';
+
+    // ── AKTUELLSTES ──
+    var featSec = document.createElement('div');
+    featSec.innerHTML = '<div class="section-header"><h2>Aktuellstes</h2><div class="section-line"></div></div>';
+    main.appendChild(featSec);
+    main.appendChild(buildFeatured(latest[0]));
+
+    // ── DIESEN MONAT ──
+    if (thisMonth.length > 0) {
+      var monthSec = document.createElement('div');
+      monthSec.innerHTML = '<div class="section-header"><h2>Diesen Monat</h2><div class="section-line"></div></div>';
+      main.appendChild(monthSec);
+      var monthList = document.createElement('div');
+      thisMonth.forEach(function(item, i) { monthList.appendChild(buildNewsItem(item, 'month-' + i)); });
+      main.appendChild(monthList);
+    }
+
+    // ── WEITERE ──
+    if (older.length > 0) {
+      var olderWrap = document.createElement('div');
+      olderWrap.style.marginTop = '40px';
+      olderWrap.innerHTML =
+        '<div class="older-accordion">' +
+        '<div class="older-accordion-header" onclick="toggleOlder()">' +
+        '<h3>Weitere News (' + older.length + ')</h3>' +
+        '<span class="older-accordion-toggle" id="olderToggle">▾</span>' +
+        '</div>' +
+        '<div class="older-accordion-body" id="olderBody"></div>' +
+        '</div>';
+      main.appendChild(olderWrap);
+
+      var olderBody = document.getElementById('olderBody');
+      older.forEach(function(item, i) { olderBody.appendChild(buildNewsItem(item, 'older-' + i)); });
+    }
+  }
+
+  function scrollToAnchor() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    setTimeout(function() {
+      var el = document.getElementById(hash.slice(1));
+      if (!el) return;
+      var olderBody = document.getElementById('olderBody');
+      if (olderBody && olderBody.contains(el) && !olderBody.classList.contains('open')) {
+        toggleOlder();
+        setTimeout(function() { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 320);
+      } else {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 200);
+  }
+
+  function toggleOlder() {
+    var body = document.getElementById('olderBody');
+    var toggle = document.getElementById('olderToggle');
+    if (!body) return;
+    body.classList.toggle('open');
+    toggle.classList.toggle('open');
+  }
+
+  // ── CSV PARSING ──
+  function parseCSV(text) {
+  var rows = [], row = [], cur = '', inQ = false;
+  for (var i = 0; i < text.length; i++) {
+    var ch = text[i], code = text.charCodeAt(i);
+    if (ch === '"') {
+      if (inQ && text[i+1] === '"') { cur += '"'; i++; }
+      else { inQ = !inQ; }
+    } else if (ch === ',' && !inQ) {
+      row.push(cur); cur = '';
+    } else if ((code === 10 || (code === 13 && text.charCodeAt(i+1) === 10)) && !inQ) {
+      if (code === 13) i++;
+      row.push(cur); cur = '';
+      rows.push(row); row = [];
+    } else {
+      cur += ch;
+    }
+  }
+  if (cur || row.length) { row.push(cur); rows.push(row); }
+  return rows;
+}
+
+// Fetch news from Google Sheets
+// Columns: A=Code, B=Datum, C=Titel, D=Text, E=Link
+fetch('https://docs.google.com/spreadsheets/d/1inAiEvDK3ORJUCkBkaTZVbK8PWJ7U8gIlV3hpEJoXMw/gviz/tq?tqx=out:csv&sheet=News')
+  .then(function(r) { return r.text(); })
+  .then(function(csv) {
+    var rows = parseCSV(csv);
+    var items = rows.slice(1).map(function(cols) {
+      var code      = (cols[0]||'').trim();
+      var date      = (cols[1]||'').trim();
+      var title     = (cols[2]||'').trim();
+      var shortText = (cols[3]||'').trim();
+      var text      = (cols[4]||'').trim();
+      var link      = (cols[5]||'').trim();
+      return { code: code, date: date, title: title, shortText: shortText, text: text, link: link };
+    }).filter(function(i) { return i.title && i.title.indexOf('#N/A') === -1 && i.code; });
+    if (items.length > 0) {
+      var pending = items.length;
+      items.forEach(function(item) {
+        tryLoadImages(item.code, function(imgs) {
+          item.imgs = imgs;
+          pending--;
+          if (pending === 0) { renderAllNews(items); scrollToAnchor(); }
+        });
+      });
+    } else {
+      renderAllNews([]);
+    }
+  })
+  .catch(function() { renderAllNews([]); });
+
+  // ── ARTICLE MODAL ──
+  var lbImgs = [], lbCur = 0;
+
+  function openArticleModal(e, btn) {
+    e.stopPropagation();
+    var el = btn.closest('[data-title]');
+    if (!el) return;
+    var title  = el.getAttribute('data-title') || '';
+    var date   = el.getAttribute('data-date')  || '';
+    var short  = el.getAttribute('data-short') || '';
+    var text   = el.getAttribute('data-text')  || '';
+    var imgs   = JSON.parse(el.getAttribute('data-imgs') || '[]');
+
+    document.getElementById('modalDate').textContent  = date;
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalLead').innerHTML    = short ? formatText(short) : '';
+    document.getElementById('modalBody').innerHTML    = text  ? formatText(text)  : '';
+
+    // Gallery
+    lbImgs = imgs;
+    var gal = document.getElementById('modalGallery');
+    gal.innerHTML = '';
+    imgs.forEach(function(src, i) {
+      var img = document.createElement('img');
+      img.src = src; img.alt = title;
+      img.onclick = function(ev) { ev.stopPropagation(); openLightbox(i); };
+      gal.appendChild(img);
+    });
+
+    document.getElementById('articleModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeArticleModal(e) {
+    if (e && e.target !== document.getElementById('articleModal')) return;
+    document.getElementById('articleModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ── IMAGE LIGHTBOX ──
+  function openLightbox(idx) {
+    lbCur = idx;
+    document.getElementById('lightboxImg').src = lbImgs[idx];
+    document.getElementById('imgLightbox').classList.add('open');
+  }
+
+  function closeLightbox(e) {
+    if (e && e.target !== document.getElementById('imgLightbox')) return;
+    document.getElementById('imgLightbox').classList.remove('open');
+  }
+
+  function lbNav(dir) {
+    lbCur = ((lbCur + dir) % lbImgs.length + lbImgs.length) % lbImgs.length;
+    document.getElementById('lightboxImg').src = lbImgs[lbCur];
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.getElementById('imgLightbox').classList.remove('open');
+      closeArticleModal({ target: document.getElementById('articleModal') });
+      document.body.style.overflow = '';
+    }
+    if (document.getElementById('imgLightbox').classList.contains('open')) {
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft')  lbNav(-1);
+    }
+  });
+
+  // Also make featured images clickable for lightbox
+  document.addEventListener('click', function(e) {
+    var nc = e.target.getAttribute('data-nc');
+    if (!nc) return;
+    // handled by carousel logic
+  });
+
+  // Make featured carousel images open lightbox
+  document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'IMG' && e.target.closest('.news-featured')) {
+      var featured = e.target.closest('[data-imgs]');
+      if (!featured) return;
+      var imgs = JSON.parse(featured.getAttribute('data-imgs') || '[]');
+      if (!imgs.length) return;
+      var allImgs = featured.querySelectorAll('.news-img-carousel img, img.news-img');
+      var idx = 0;
+      allImgs.forEach(function(img, i) { if (img === e.target) idx = i; });
+      lbImgs = imgs;
+      openLightbox(idx);
+    }
+  });
+</script>
+
+<!-- ARTICLE MODAL -->
+<div id="articleModal" class="article-modal" onclick="closeArticleModal(event)">
+  <div class="article-modal-inner">
+    <button class="article-modal-close" onclick="closeArticleModal()">&times;</button>
+    <div class="article-modal-date" id="modalDate"></div>
+    <h2 class="article-modal-title" id="modalTitle"></h2>
+    <div class="article-modal-lead" id="modalLead"></div>
+    <div class="article-modal-body" id="modalBody"></div>
+    <div class="article-modal-gallery" id="modalGallery"></div>
+  </div>
+</div>
+
+<!-- IMAGE LIGHTBOX -->
+<div id="imgLightbox" class="img-lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <button class="lightbox-nav lightbox-prev" onclick="lbNav(-1);event.stopPropagation()">&#8249;</button>
+  <img id="lightboxImg" src="" alt="" />
+  <button class="lightbox-nav lightbox-next" onclick="lbNav(1);event.stopPropagation()">&#8250;</button>
+</div>
+</body>
+</html>

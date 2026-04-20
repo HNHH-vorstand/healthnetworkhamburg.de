@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!-- <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="googlebot" content="noindex, nofollow" />
+-->
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Werde Mitglied des Health Network Hamburg e.V., wenn Du Dich mit Innovation in Gesundheit beschäftigst und in der Metropolregion Hamburg lebst oder arbeitest!/>
+  <link rel="canonical" href="https://healthnetworkhamburg.de/mitglied-werden" />
+  <meta property="og:title" content="Health Network Hamburg e.V." />
+  <meta property="og:description" content="Die Brückenplattform für Gesundheitsinnovation in Hamburg." />
+  <meta property="og:image" content="https://healthnetworkhamburg.de/images/og-preview.jpg" />
+  <meta property="og:url" content="https://healthnetworkhamburg.de/mitglied-werden" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Health Network Hamburg e.V.",
+    "url": "https://healthnetworkhamburg.de",
+    "email": "vorstand@healthnetworkhamburg.de",
+    "description": "Brückenplattform für Gesundheitsinnovation in der Metropolregion Hamburg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hamburg",
+      "addressCountry": "DE"
+    }
+  }
+  </script>
+  <title>Mitglied werden – Health Network Hamburg e.V.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="/hnhh_favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/hnhh_favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <style>
+    :root {
+      --rot: #C8102E; --rot-dunkel: #a00d25; --rot-hell: #f5e8eb;
+      --weiss: #FFFFFF; --grau-leicht: #f7f7f7; --grau-mittel: #e0e0e0;
+      --text: #1a1a1a; --text-leicht: #555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--weiss); overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; }
+
+    /* HEADER */
+    header { background: var(--weiss); border-bottom: 3px solid var(--rot); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+    .logo-area { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-area img { height: 56px; width: auto; }
+    .logo-text .name { font-family: 'Montserrat',sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--rot); letter-spacing: -0.01em; display: block; }
+    .logo-text .tagline { font-size: 0.68rem; color: var(--text-leicht); letter-spacing: 0.06em; text-transform: uppercase; display: block; }
+    nav { display: flex; gap: 24px; align-items: center; }
+    nav a { text-decoration: none; color: var(--text); font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: var(--rot); }
+    nav a.active { color: var(--rot); }
+    .nav-cta { background: var(--rot) !important; color: var(--weiss) !important; padding: 8px 18px !important; border-radius: 5px !important; font-weight: 700 !important; transition: background 0.2s, transform 0.15s !important; }
+    .nav-cta:hover { background: var(--rot-dunkel) !important; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); }
+
+    /* HERO – heller Unterseiten-Stil */
+    .hero { background: var(--grau-leicht); border-bottom: 3px solid var(--rot); padding: 56px 40px 48px; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; }
+    .hero-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rot); margin-bottom: 12px; font-family: 'Inter', sans-serif; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px; }
+    .hero p { font-size: 1.05rem; color: var(--text-leicht); line-height: 1.7; max-width: 620px; }
+
+    /* MAIN */
+    main { max-width: 1100px; margin: 0 auto; padding: 64px 24px 80px; }
+
+    /* FORM SECTION */
+    .form-section { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: start; }
+
+    /* INFO PANEL */
+    .form-info h2 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 14px; line-height: 1.25; }
+    .form-info h2 span { color: var(--rot); }
+    .form-info > p { font-size: 1rem; color: var(--text-leicht); line-height: 1.75; margin-bottom: 24px; }
+
+    .info-note {
+      background: var(--rot-hell); border-left: 4px solid var(--rot);
+      border-radius: 0 8px 8px 0; padding: 16px 18px;
+      margin-bottom: 14px; font-size: 0.92rem; line-height: 1.65;
+    }
+    .info-note strong { color: var(--rot); display: block; margin-bottom: 6px; font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; }
+
+    /* Aufzählung Zielgruppen */
+    .zielgruppen { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 6px; }
+    .zielgruppen li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; line-height: 1.5; }
+    .zielgruppen li::before {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--rot);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--rot); text-decoration: none; font-weight: 600;
+      font-size: 0.9rem; margin-top: 8px; transition: opacity 0.2s;
+    }
+    .contact-link:hover { opacity: 0.75; }
+
+    /* FORM WRAPPER */
+    .form-wrapper { background: var(--weiss); border: 1px solid var(--grau-mittel); border-radius: 12px; overflow: hidden; }
+    .form-wrapper-header {
+      background: var(--rot); color: var(--weiss);
+      padding: 16px 22px; display: flex; align-items: center; gap: 14px;
+    }
+    .form-wrapper-header svg { flex-shrink: 0; }
+    .form-wrapper-header h3 { font-size: 1rem; font-weight: 700; margin-bottom: 1px; }
+    .form-wrapper-header p { font-size: 0.78rem; opacity: 0.8; }
+    .form-embed iframe { width: 100%; height: 1387px; border: none; display: block; }
+
+    /* FOOTER */
+    footer { background: var(--text); color: rgba(255,255,255,0.65); padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.82rem; }
+    .footer-links { display: flex; gap: 20px; align-items: center; }
+    .footer-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--weiss); }
+    .footer-li svg { width: 20px; height: 20px; fill: #0A66C2; display: block; }
+
+    @media (max-width: 900px) {
+      .form-section { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      header { padding: 12px 18px; }
+      .logo-area img { height: 44px; }
+      nav { display: none; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: var(--weiss); border-top: 1px solid var(--grau-mittel); box-shadow: 0 8px 20px rgba(0,0,0,0.1); padding: 14px 0; }
+      nav.open { display: flex; }
+      nav a { padding: 11px 22px; border-bottom: 1px solid var(--grau-mittel); }
+      .nav-cta { margin: 10px 22px 4px !important; width: calc(100% - 44px); text-align: center; }
+      .hamburger { display: flex; }
+      .hero { padding: 36px 20px 32px; }
+      main { padding: 40px 16px 60px; }
+      footer { padding: 22px 18px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo-area">
+    <img src="images/homepage/hnhh-logo.svg" alt="Health Network Hamburg e.V. Logo" />
+    <div class="logo-text">
+      <span class="name">Health Network Hamburg e.V.</span>
+      <span class="tagline">Gemeinsam für Gesundheit</span>
+    </div>
+  </a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  <nav id="nav">
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="events.html">Events</a>
+    <a href="neuigkeiten.html">Neuigkeiten</a>
+    <a href="mitglied-werden.html" class="nav-cta">Mitglied werden</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/heros/mitglied-werden.jpg'); background-size: cover; background-position: center top; border-bottom: none; ">
+  <div class="hero-inner">
+    <div class="hero-eyebrow" style="color: rgba(255,255,255,0.8);">#HNHH · Mitgliedschaft</div>
+    <h1 style="color: white;">Mitglied werden</h1>
+    <p style="color: rgba(255,255,255,0.85);">Werde Teil des Health Network Hamburg e.V. und gestalte Gesundheit in der Metropolregion Hamburg aktiv mit.</p>
+  </div>
+</div>
+
+<main>
+  <div class="form-section" id="anmeldung">
+
+    <!-- INFO PANEL -->
+    <div class="form-info">
+      <h2>Jetzt <span>Mitglied</span> werden</h2>
+      <p>Fülle das Formular aus – wir melden uns anschließend bei dir und freuen uns, dich persönlich kennenzulernen.</p>
+
+      <div class="info-note">
+        <strong>Unsere Satzung</strong>
+        Hier findest du die <a href="images/hnhh-satzung.pdf" target="_blank" style="color:var(--rot);font-weight:600;">Satzung des HNHH</a>.
+      </div>
+
+      <div class="info-note">
+        <strong>Wer kann Mitglied werden?</strong>
+        Alle, die in der Metropolregion Hamburg leben oder arbeiten und sich für Healthcare und Innovation begeistern.
+      </div>
+
+      <div class="info-note">
+        <strong>Mitgliedsbeitrag</strong>
+        Der jährliche Mitgliedsbeitrag beträgt <strong>60&nbsp;€</strong> pro Person.
+      </div>
+
+      <div class="info-note">
+        <strong>Was passiert nach der Anmeldung?</strong>
+        Du erhältst eine E-Mail von uns und wir nehmen dich in unsere Mitglieder-Liste auf. Ab sofort erhältst du alle Mitgliederinformationen und Einladungen zu unseren Events.
+      </div>
+
+      <a href="kontakt.html" class="contact-link">
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="17" rx="2" stroke="#C8102E" stroke-width="1.75"/><path d="M4 11L16 19L28 11" stroke="#C8102E" stroke-width="1.75" stroke-linecap="round"/></svg>
+        Fragen? Schreib uns direkt
+      </a>
+    </div>
+
+    <!-- FORMULAR -->
+    <div class="form-wrapper">
+      <div class="form-wrapper-header">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect x="5" y="5" width="22" height="22" rx="2" stroke="white" stroke-width="1.75"/><path d="M9 11H23M9 16H23M9 21H17" stroke="white" stroke-width="1.75" stroke-linecap="round"/></svg>
+        <div>
+          <h3>Mitgliedschaftsantrag</h3>
+          <p>Health Network Hamburg e.V.</p>
+        </div>
+      </div>
+      <div class="form-embed">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeTQMI-ms404cFIddm6aFJzggx2_N2klDbLSYsasgfZV0OGHQ/viewform?embedded=true"
+          frameborder="0" marginheight="0" marginwidth="0"
+          title="Mitgliedschaftsantrag Health Network Hamburg e.V.">
+          Wird geladen…
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-copy">&copy; <span id="year"></span> Health Network Hamburg e.V.</div>
+  <div class="footer-links">
+    <a href="kontakt.html">Kontakt</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="https://www.linkedin.com/groups/13128513/" target="_blank" class="footer-li">
+      <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script data-cfasync="false">
+  document.getElementById('year').textContent = new Date().getFullYear();
+  function toggleMenu() {
+    document.getElementById('nav').classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    var nav = document.getElementById('nav'), h = document.getElementById('hamburger');
+    if (nav && h && !nav.contains(e.target) && !h.contains(e.target)) nav.classList.remove('open');
+  });
+</script>
+</body>
+</html>

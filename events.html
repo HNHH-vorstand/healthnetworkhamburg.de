@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!-- <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="googlebot" content="noindex, nofollow" />
+-->
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Health Apéros, Workshops und mehr – alle kommenden und vergangenen Events des Health Network Hamburg e.V. Offen für Mitglieder und Interessierte." />
+  <link rel="canonical" href="https://healthnetworkhamburg.de/events" />
+  <meta property="og:title" content="Health Network Hamburg e.V." />
+  <meta property="og:description" content="Die Brückenplattform für Gesundheitsinnovation in Hamburg." />
+  <meta property="og:image" content="https://healthnetworkhamburg.de/images/og-preview.jpg" />
+  <meta property="og:url" content="https://healthnetworkhamburg.de/events" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Health Network Hamburg e.V.",
+    "url": "https://healthnetworkhamburg.de",
+    "email": "vorstand@healthnetworkhamburg.de",
+    "description": "Brückenplattform für Gesundheitsinnovation in der Metropolregion Hamburg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hamburg",
+      "addressCountry": "DE"
+    }
+  }
+  </script>
+  <title>Events & Apéros – Health Network Hamburg e.V.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="/hnhh_favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/hnhh_favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <style>
+    :root {
+      --rot: #C8102E; --rot-dunkel: #a00d25; --rot-hell: #f5e8eb;
+      --weiss: #FFFFFF; --grau-leicht: #f7f7f7; --grau-mittel: #e0e0e0;
+      --text: #1a1a1a; --text-leicht: #555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--weiss); overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; }
+
+    /* HEADER */
+    header { background: var(--weiss); border-bottom: 3px solid var(--rot); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+    .logo-area { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-area img { height: 56px; width: auto; }
+    .logo-text .name { font-family: 'Montserrat',sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--rot); letter-spacing: -0.01em; display: block; }
+    .logo-text .tagline { font-size: 0.68rem; color: var(--text-leicht); letter-spacing: 0.06em; text-transform: uppercase; display: block; }
+    nav { display: flex; gap: 24px; align-items: center; }
+    nav a { text-decoration: none; color: var(--text); font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--rot); }
+    .nav-cta { background: var(--rot) !important; color: var(--weiss) !important; padding: 8px 18px !important; border-radius: 5px !important; font-weight: 700 !important; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--rot-dunkel) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); }
+
+    /* HERO */
+    .hero { background: var(--grau-leicht); border-bottom: 3px solid var(--rot); padding: 56px 40px 48px; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; }
+    .hero-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rot); margin-bottom: 12px; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px; }
+    .hero p { font-size: 1.05rem; color: var(--text-leicht); line-height: 1.7; max-width: 620px; }
+
+    /* MAIN */
+    main { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
+    .section-header { display: flex; align-items: center; gap: 16px; margin: 64px 0 28px; }
+    .section-header h2 { font-size: 1.75rem; font-weight: 700; white-space: nowrap; letter-spacing: -0.01em; }
+    .section-line { flex: 1; height: 2px; background: var(--rot); opacity: 0.2; }
+    .section-badge { background: var(--rot); color: var(--weiss); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; white-space: nowrap; }
+
+    /* INFO BANNER */
+    .info-banner { background: var(--rot-hell); border-left: 4px solid var(--rot); border-radius: 0 8px 8px 0; padding: 16px 20px; margin-bottom: 32px; font-size: 0.95rem; line-height: 1.6; color: var(--text); }
+    .info-banner strong { color: var(--rot); }
+
+    /* EVENT CARDS */
+    .events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .event-card { background: var(--weiss); border: 1px solid var(--grau-mittel); border-radius: 12px; overflow: hidden; transition: border-color 0.2s; }
+    .event-card:hover { border-color: var(--rot); }
+    .event-card-header { background: var(--rot); color: var(--weiss); padding: 16px 22px; display: flex; align-items: center; gap: 16px; }
+    .event-number { font-family: 'Montserrat',sans-serif; font-size: 2rem; font-weight: 800; opacity: 0.35; line-height: 1; }
+    .event-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; margin-bottom: 2px; }
+    .event-title-area h3 { font-size: 1.1rem; font-weight: 700; }
+    .event-card-body { padding: 0; }
+    .event-embed { line-height: 0; }
+    .event-embed iframe { width: 100%; height: 420px; border: none; display: block; }
+
+    /* PAST EVENTS */
+    .past-event { background: var(--weiss); border: 1px solid var(--grau-mittel); border-radius: 12px; overflow: hidden; margin-bottom: 28px; }
+    .past-event-header { padding: 20px 24px; display: flex; align-items: center; gap: 16px; cursor: pointer; user-select: none; }
+    .past-event-header:hover .past-event-title { color: var(--rot); }
+    .past-event-number { font-family: 'Montserrat',sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--rot); opacity: 0.25; line-height: 1; min-width: 48px; }
+    .past-event-info { flex: 1; }
+    .past-event-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-leicht); margin-bottom: 3px; }
+    .past-event-title { font-family: 'Montserrat',sans-serif; font-size: 1.05rem; font-weight: 700; transition: color 0.2s; }
+    .past-event-date { font-size: 0.82rem; color: var(--text-leicht); margin-top: 3px; }
+    .past-event-toggle { font-size: 1.2rem; color: var(--text-leicht); transition: transform 0.3s; }
+    .past-event-toggle.open { transform: rotate(180deg); }
+    .past-event-body { display: none; padding: 0 24px 24px; }
+    .past-event-body.open { display: block; }
+
+    /* PDF EMBED */
+    .pdf-embed { border: 1px solid var(--grau-mittel); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+    .pdf-embed iframe { width: 100%; height: 600px; border: none; display: block; }
+    .pdf-note { font-size: 0.8rem; color: var(--text-leicht); margin-top: 8px; font-style: italic; }
+
+    /* GALLERY */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+    .gallery-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; cursor: pointer; transition: opacity 0.2s, transform 0.2s; display: block; }
+    .gallery-img:hover { opacity: 0.85; transform: scale(1.02); }
+    .gallery-loading { padding: 24px; text-align: center; color: var(--text-leicht); font-size: 0.9rem; }
+
+    /* LIGHTBOX */
+    .lightbox { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.9); z-index: 1000; align-items: center; justify-content: center; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 4px; }
+    .lightbox-close { position: fixed; top: 20px; right: 28px; color: white; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.8; }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-nav { position: fixed; top: 50%; transform: translateY(-50%); color: white; font-size: 2.5rem; cursor: pointer; opacity: 0.7; padding: 12px; }
+    .lightbox-nav:hover { opacity: 1; }
+    .lightbox-prev { left: 12px; }
+    .lightbox-next { right: 12px; }
+
+    /* FOOTER */
+    footer { background: var(--text); color: rgba(255,255,255,0.65); padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.82rem; }
+    .footer-links { display: flex; gap: 20px; align-items: center; }
+    .footer-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--weiss); }
+    .footer-li svg { width: 20px; height: 20px; fill: #0A66C2; display: block; }
+
+    @media (max-width: 900px) { .events-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) {
+      header { padding: 12px 18px; }
+      .logo-area img { height: 44px; }
+      nav { display: none; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: var(--weiss); border-top: 1px solid var(--grau-mittel); box-shadow: 0 8px 20px rgba(0,0,0,0.1); padding: 14px 0; }
+      nav.open { display: flex; }
+      nav a { padding: 11px 22px; border-bottom: 1px solid var(--grau-mittel); }
+      .nav-cta { margin: 10px 22px 4px; width: calc(100% - 44px); justify-content: center; text-align: center; }
+      .hamburger { display: flex; }
+      .hero { padding: 36px 20px 32px; }
+      main { padding: 0 16px 60px; }
+      footer { padding: 22px 18px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo-area">
+    <img src="images/homepage/hnhh-logo.svg" alt="Health Network Hamburg e.V. Logo" />
+    <div class="logo-text">
+      <span class="name">Health Network Hamburg e.V.</span>
+      <span class="tagline">Gemeinsam für Gesundheit</span>
+    </div>
+  </a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  <nav id="nav">
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="events.html">Events</a>
+    <a href="neuigkeiten.html">Neuigkeiten</a>
+    <a href="mitglied-werden.html" class="nav-cta">Mitglied werden</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/heros/events.jpg'); background-size: cover; background-position: center top; border-bottom: none; ">
+  <div class="hero-inner">
+    <div class="hero-eyebrow" style="color: rgba(255,255,255,0.8);">#HNHH · Events</div>
+    <h1 style="color: white;">Unsere Events</h1>
+    <p style="color: rgba(255,255,255,0.85);">Begegnung, Austausch und Innovation – im Health Network Hamburg e.V. kommen Menschen zusammen, die Gesundheit und Zukunft verbinden wollen.</p>
+  </div>
+</div>
+
+<main>
+
+  <!-- KOMMENDE EVENTS -->
+  <div class="section-header">
+    <h2>Kommende Events</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="events-grid">
+    <!-- Apéro 13 -->
+    <div class="event-card">
+      <div class="event-card-header">
+        <div class="event-number">13</div>
+        <div class="event-title-area">
+          <div class="event-label">Health Apéro</div>
+          <h3>Apéro No. 13</h3>
+        </div>
+      </div>
+      <div class="event-card-body">
+        <div class="event-embed">
+          <iframe src="https://luma.com/embed/event/evt-rN8f5oO0ejj8YVY/simple"
+            allow="fullscreen; payment" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Apéro 14 -->
+    <div class="event-card">
+      <div class="event-card-header">
+        <div class="event-number">14</div>
+        <div class="event-title-area">
+          <div class="event-label">Health Apéro</div>
+          <h3>Apéro No. 14</h3>
+        </div>
+      </div>
+      <div class="event-card-body">
+        <div class="event-embed">
+          <iframe src="https://luma.com/embed/event/evt-c07JVOvFtn3FNht/simple"
+            allow="fullscreen; payment" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERGANGENE EVENTS -->
+  <div class="section-header">
+    <h2>Vergangene Events</h2>
+    <div class="section-line"></div>
+    <span class="section-badge">Rückblick</span>
+  </div>
+
+  <!-- Strategieworkshop -->
+  <div class="past-event" id="pe-workshop">
+    <div class="past-event-header" onclick="togglePast('workshop')">
+      <div class="past-event-number">WS</div>
+      <div class="past-event-info">
+        <div class="past-event-label">Workshop</div>
+        <div class="past-event-title">Strategie-Workshop</div>
+        <div class="past-event-date">März 2026</div>
+      </div>
+      <div class="past-event-toggle" id="toggle-workshop">▾</div>
+    </div>
+    <div class="past-event-body" id="body-workshop">
+      <p style="font-size:0.95rem;color:var(--text-leicht);line-height:1.7;margin-bottom:20px;">
+        Über 60 Gründungsmitglieder entwickelten gemeinsam die Zukunftsstrategie des Health Network Hamburg e.V. – 11 Circles, 4 Funktionslogiken, eine gemeinsame Vision.
+      </p>
+      <div class="pdf-embed">
+        <iframe src="https://drive.google.com/file/d/1DcNOT2HxRxR2Acfn3K2NUeJeZWGKmfjV/preview"
+          allow="autoplay" title="Ergebnispräsentation Strategie-Workshop"></iframe>
+      </div>
+      <p class="pdf-note">Das Dokument ist nur zur Ansicht verfügbar.</p>
+      <div style="margin-top:20px;">
+        <h4 style="font-size:0.88rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-leicht);margin-bottom:12px;">Impressionen</h4>
+        <div class="gallery-grid" id="gallery-workshop">
+          <div class="gallery-loading">Bilder werden geladen…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gründungsversammlung -->
+  <div class="past-event" id="pe-gruendung">
+    <div class="past-event-header" onclick="togglePast('gruendung')">
+      <div class="past-event-number">GV</div>
+      <div class="past-event-info">
+        <div class="past-event-label">Gründungsveranstaltung</div>
+        <div class="past-event-title">Gründungsversammlung</div>
+        <div class="past-event-date">Februar 2026</div>
+      </div>
+      <div class="past-event-toggle" id="toggle-gruendung">▾</div>
+    </div>
+    <div class="past-event-body" id="body-gruendung">
+      <p style="font-size:0.95rem;color:var(--text-leicht);line-height:1.7;margin-bottom:20px;">
+        Die offizielle Gründung des Health Network Hamburg e.V. – der Startschuss für ein neues Netzwerk in der Metropolregion Hamburg.
+      </p>
+      <div style="margin-top:8px;">
+        <h4 style="font-size:0.88rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-leicht);margin-bottom:12px;">Impressionen</h4>
+        <div class="gallery-grid" id="gallery-gruendung">
+          <div class="gallery-loading">Bilder werden geladen…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Apéros 1-12 -->
+  <div class="past-event" id="pe-aperos">
+    <div class="past-event-header" onclick="togglePast('aperos')">
+      <div class="past-event-number">1–12</div>
+      <div class="past-event-info">
+        <div class="past-event-label">Health Apéro</div>
+        <div class="past-event-title">Apéros No. 1–12</div>
+        <div class="past-event-date">Jan 2025 – März 2026</div>
+      </div>
+      <div class="past-event-toggle" id="toggle-aperos">▾</div>
+    </div>
+    <div class="past-event-body" id="body-aperos">
+      <p style="font-size:0.95rem;color:var(--text-leicht);line-height:1.7;margin-bottom:20px;">
+        Seit Januar 2025 haben die Health Apéros eine lebendige Community geschaffen – ein Format für Begegnung, Vernetzung und den offenen Austausch rund um Healthcare und Innovation.
+      </p>
+      <div style="margin-top:8px;">
+        <h4 style="font-size:0.88rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-leicht);margin-bottom:12px;">Impressionen</h4>
+        <div class="gallery-grid" id="gallery-aperos">
+          <div class="gallery-loading">Bilder werden geladen…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  <span class="lightbox-nav lightbox-prev" onclick="lbNav(-1);event.stopPropagation()">‹</span>
+  <img id="lightbox-img" src="" alt="" />
+  <span class="lightbox-nav lightbox-next" onclick="lbNav(1);event.stopPropagation()">›</span>
+</div>
+
+<footer>
+  <div class="footer-copy">&copy; <span id="year"></span> Health Network Hamburg e.V.</div>
+  <div class="footer-links">
+    <a href="kontakt.html">Kontakt</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="https://www.linkedin.com/groups/13128513/" target="_blank" class="footer-li">
+      <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script data-cfasync="false">
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function toggleMenu() {
+    document.getElementById('nav').classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    var nav = document.getElementById('nav'), h = document.getElementById('hamburger');
+    if (nav && h && !nav.contains(e.target) && !h.contains(e.target)) nav.classList.remove('open');
+  });
+
+  // ── ACCORDION für vergangene Events ──
+  var openSections = {};
+  function togglePast(id) {
+    var body = document.getElementById('body-' + id);
+    var toggle = document.getElementById('toggle-' + id);
+    openSections[id] = !openSections[id];
+    body.classList.toggle('open', openSections[id]);
+    toggle.classList.toggle('open', openSections[id]);
+    // Load gallery when opened
+    if (openSections[id]) {
+      loadGallery(id);
+    }
+  }
+
+  var GALLERIES = {
+  gruendung: [
+    "/images/gruendungsversammlung/gruendungsversammlung-1.jpg",
+    "/images/gruendungsversammlung/gruendungsversammlung-2.jpg",
+    "/images/gruendungsversammlung/gruendungsversammlung-3.jpg",
+    "/images/gruendungsversammlung/gruendungsversammlung-4.jpg",
+    "/images/gruendungsversammlung/gruendungsversammlung-5.jpg",
+    "/images/gruendungsversammlung/gruendungsversammlung-6.jpg",
+    "/images/gruendungsversammlung/gruendungsversammlung-7.jpg"
+  ],
+
+  aperos: [
+    "/images/aperos/aperos-1.jpg",
+    "/images/aperos/aperos-2.png",
+    "/images/aperos/aperos-3.png",
+    "/images/aperos/aperos-4.jpg",
+    "/images/aperos/aperos-5.jpeg",
+    "/images/aperos/aperos-6.jpeg",
+    "/images/aperos/aperos-7.jpeg",
+    "/images/aperos/aperos-8.jpeg",
+    "/images/aperos/aperos-9.jpg"
+  ],
+
+  workshop: [
+    "/images/strategieworkshop-1/strategie-1.jpg",
+    "/images/strategieworkshop-1/strategie-2.jpg",
+    "/images/strategieworkshop-1/strategie-3.jpg",
+    "/images/strategieworkshop-1/strategie-4.jpg",
+    "/images/strategieworkshop-1/strategie-5.jpg",
+    "/images/strategieworkshop-1/strategie-6.jpg",
+    "/images/strategieworkshop-1/strategie-7.jpg",
+    "/images/strategieworkshop-1/strategie-8.jpg",
+    "/images/strategieworkshop-1/strategie-9.jpg",
+    "/images/strategieworkshop-1/strategie-10.jpg",
+    "/images/strategieworkshop-1/strategie-11.jpg",
+    "/images/strategieworkshop-1/strategie-12.jpg",
+    "/images/strategieworkshop-1/strategie-13.jpg"
+  ]
+};
+
+var CURRENT_GALLERY = {};
+
+function loadGallery(id) {
+  var container = document.getElementById('gallery-' + id);
+  if (!container) return;
+
+  var urls = GALLERIES[id];
+
+  if (!urls || !urls.length) {
+    container.innerHTML = '<div class="gallery-loading">Noch keine Bilder vorhanden.</div>';
+    return;
+  }
+
+  renderGallery(id, urls);
+}
+
+function renderGallery(id, urls) {
+  var container = document.getElementById('gallery-' + id);
+  container.innerHTML = '';
+
+  // WICHTIG: speichern für Lightbox
+  CURRENT_GALLERY[id] = urls;
+
+
+  urls.forEach(function(url, i) {
+    var img = document.createElement('img');
+    img.src = url;
+    img.alt = 'Impression ' + (i + 1);
+    img.className = 'gallery-img';
+
+    img.onclick = function() {
+      openLightbox(id, i);
+    };
+
+    container.appendChild(img);
+  });
+}
+
+
+  // ── LIGHTBOX ──
+  var lbCurrent = 0;
+  var lbId = '';
+
+  function openLightbox(id, idx) {
+    lbId = id;
+    lbCurrent = idx;
+
+    var imgs = CURRENT_GALLERY[id];
+
+    document.getElementById('lightbox-img').src = imgs[idx];
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    if (e && e.target !== document.getElementById('lightbox') && e.target !== document.querySelector('.lightbox-close')) return;
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function lbNav(dir) {
+    var imgs = CURRENT_GALLERY[lbId];
+    if (!imgs) return;
+    lbCurrent = ((lbCurrent + dir) % imgs.length + imgs.length) % imgs.length;
+    document.getElementById('lightbox-img').src = imgs[lbCurrent];
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox({});
+    if (e.key === 'ArrowRight') lbNav(1);
+    if (e.key === 'ArrowLeft') lbNav(-1);
+  });
+</script>
+</body>
+</html>

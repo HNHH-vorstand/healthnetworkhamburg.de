@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!-- <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="googlebot" content="noindex, nofollow" />
+-->
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Das Health Network Hamburg e.V. vernetzt Menschen aus Gesundheit, Innovation und Wissenschaft in der Metropolregion Hamburg." />
+  <link rel="canonical" href="https://healthnetworkhamburg.de/" />
+  <meta property="og:title" content="Health Network Hamburg e.V." />
+  <meta property="og:description" content="Die Brückenplattform für Gesundheitsinnovation in Hamburg." />
+  <meta property="og:image" content="https://healthnetworkhamburg.de/images/og-preview.jpg" />
+  <meta property="og:url" content="https://healthnetworkhamburg.de/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Health Network Hamburg e.V.",
+    "url": "https://healthnetworkhamburg.de",
+    "email": "vorstand@healthnetworkhamburg.de",
+    "description": "Brückenplattform für Gesundheitsinnovation in der Metropolregion Hamburg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hamburg",
+      "addressCountry": "DE"
+    }
+  }
+  </script>
+
+
+  <title>Health Network Hamburg e.V. – Gesundheitsinnovation in Hamburg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="/hnhh_favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/hnhh_favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <style>
+    :root {
+      --rot: #C8102E; --rot-dunkel: #a00d25; --rot-hell: #f5e8eb;
+      --blau: #1A6FA8; --blau-hell: #EAF3FA;
+      --weiss: #FFFFFF; --grau-leicht: #f7f7f7; --grau-mittel: #e0e0e0;
+      --text: #1a1a1a; --text-leicht: #555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { overflow-x: hidden; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--weiss); }
+    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; }
+
+    /* HEADER */
+    header {
+      background: var(--weiss); border-bottom: 3px solid var(--rot);
+      padding: 14px 40px; display: flex; align-items: center;
+      justify-content: space-between; position: sticky; top: 0;
+      z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .logo-area { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-area img { height: 56px; width: auto; }
+    .logo-text .name { font-family: 'Montserrat',sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--rot); letter-spacing: -0.01em; }
+    .logo-text .tagline { font-size: 0.68rem; color: var(--text-leicht); letter-spacing: 0.06em; text-transform: uppercase; }
+    nav { display: flex; gap: 24px; align-items: center; }
+    nav a { text-decoration: none; color: var(--text); font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--rot); }
+    .nav-cta {
+      background: var(--rot) !important;
+      color: var(--weiss) !important;
+      padding: 8px 18px !important;
+      border-radius: 5px !important;
+      font-weight: 700 !important;
+      transition: background 0.2s, transform 0.15s !important;
+    }
+    .nav-cta:hover { background: var(--rot-dunkel) !important; transform: translateY(-1px); }
+    .nav-cta.active { background: var(--rot-dunkel) !important; }
+    .linkedin-nav-btn {
+      display: flex; align-items: center; gap: 6px;
+      background: var(--rot); color: var(--weiss) !important;
+      padding: 7px 14px; border-radius: 4px; font-size: 0.82rem !important; font-weight: 600 !important;
+    }
+    .linkedin-nav-btn:hover { background: var(--rot-dunkel) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); }
+
+    /* HERO CAROUSEL */
+    .hero { position: relative; height: 88vh; min-height: 540px; max-height: 820px; overflow: hidden; }
+    .carousel-slide { position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0; transition: opacity 0.8s ease; }
+    .carousel-slide.active { opacity: 1; }
+    .carousel-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+    .hero-overlay {
+      position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+      background: linear-gradient(105deg, rgba(8,8,8,0.72) 0%, rgba(8,8,8,0.45) 50%, rgba(8,8,8,0.12) 100%);
+    }
+    .hero-accent { position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--rot); z-index: 3; }
+    .hero-content {
+      position: absolute; z-index: 2; top: 50%; transform: translateY(-50%);
+      padding: 0 60px; max-width: 720px; color: var(--weiss);
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.7); margin-bottom: 16px;
+    }
+    .hero-eyebrow .ey-upper { text-transform: uppercase; font-family: 'Inter', sans-serif; }
+    .hero-eyebrow .ey-name { text-transform: none; font-family: 'Inter', sans-serif; font-variant: normal; }
+    .hero-eyebrow::before { content:''; display:inline-block; width:24px; height:2px; background:var(--rot); }
+    .hero h1 { font-size: clamp(2.2rem,4.5vw,3.6rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 18px; }
+    .hero h1 em { font-style: normal; color: #ff8096; }
+    .hero-desc { font-size: clamp(0.95rem,1.6vw,1.08rem); line-height: 1.72; color: rgba(255,255,255,0.86); margin-bottom: 32px; max-width: 520px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-hero-primary {
+      display: inline-block; background: var(--rot); color: var(--weiss);
+      text-decoration: none; padding: 13px 28px; border-radius: 6px;
+      font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 0.9rem;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 20px rgba(200,16,46,0.4);
+    }
+    .btn-hero-primary:hover { background: var(--rot-dunkel); transform: translateY(-2px); }
+    .btn-hero-outline {
+      display: inline-block; border: 2px solid rgba(255,255,255,0.55); color: var(--weiss);
+      text-decoration: none; padding: 11px 26px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: all 0.2s;
+    }
+    .btn-hero-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--weiss); }
+    .carousel-dots { position: absolute; bottom: 24px; left: 60px; z-index: 3; display: flex; gap: 8px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.35); cursor: pointer; transition: background 0.3s, transform 0.3s; border: none; }
+    .dot.active { background: var(--rot); transform: scale(1.3); }
+    .photo-credit { position: absolute; bottom: 12px; right: 16px; font-size: 0.66rem; color: rgba(255,255,255,0.4); z-index: 3; }
+
+    /* STATS */
+    .stats-bar { background: var(--rot); color: var(--weiss); display: flex; justify-content: center; }
+    .stat-item { flex: 1; max-width: 200px; text-align: center; padding: 16px; border-right: 1px solid rgba(255,255,255,0.15); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .stat-item:last-child { border-right: none; }
+    .stat-number { font-family: 'Montserrat',sans-serif; font-size: 1.9rem; font-weight: 800; line-height: 1; margin-bottom: 4px; min-height: 2.2rem; display: flex; align-items: center; justify-content: center; }
+    .stat-label { font-size: 0.72rem; opacity: 0.82; letter-spacing: 0.06em; text-transform: uppercase; }
+
+    /* MAIN */
+    main { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
+    .section-header { display: flex; align-items: center; gap: 16px; margin: 68px 0 28px; }
+    .section-header h2 { font-size: 1.75rem; font-weight: 700; white-space: nowrap; letter-spacing: -0.01em; }
+    .section-line { flex: 1; height: 2px; background: var(--rot); opacity: 0.2; }
+    .section-badge { background: var(--rot); color: var(--weiss); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+    .about-text h3 { font-size: 1.45rem; font-weight: 700; margin-bottom: 14px; line-height: 1.3; }
+    .about-text p { font-size: 1rem; line-height: 1.75; color: var(--text-leicht); margin-bottom: 14px; }
+    .about-highlight { background: var(--rot-hell); border-left: 4px solid var(--rot); border-radius: 0 8px 8px 0; padding: 18px 20px; font-size: 1rem; line-height: 1.65; font-style: italic; margin-top: 20px; }
+    .about-visual { position: relative; padding-bottom: 36px; padding-right: 20px; }
+    .about-img-main { border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 16px 48px rgba(0,0,0,0.13); }
+    .about-img-main img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
+    .about-img-secondary {
+      position: absolute; bottom: -28px; right: -20px; width: 50%;
+      border-radius: 10px; overflow: hidden; border: 4px solid var(--weiss);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.16); aspect-ratio: 4/3;
+    }
+    .about-img-secondary img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .about-img-badge {
+      position: absolute; bottom: 8px; left: -16px;
+      background: var(--rot); color: var(--weiss); border-radius: 10px;
+      padding: 12px 18px; box-shadow: 0 8px 24px rgba(200,16,46,0.3);
+    }
+    .about-img-badge .num { font-family:'Montserrat',sans-serif; font-size:1.8rem; font-weight:800; line-height:1; }
+    .about-img-badge .lbl { font-size:0.7rem; opacity:0.85; text-transform:uppercase; letter-spacing:0.06em; }
+
+    /* CIRCLES – Operating Model style */
+    .circles-intro { font-size: 1rem; color: var(--text-leicht); line-height: 1.7; max-width: 720px; margin-bottom: 36px; }
+
+    .om-container {
+      border: 1.5px solid var(--grau-mittel); border-radius: 12px;
+      overflow: hidden; margin-bottom: 8px;
+    }
+    .om-header {
+      background: var(--rot); color: var(--weiss);
+      padding: 14px 24px; text-align: center;
+      font-family: 'Montserrat',sans-serif; font-size: 0.95rem; font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    .om-row {
+      display: grid; border-top: 1.5px solid var(--grau-mittel);
+    }
+    .om-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .om-row.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .om-row.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .om-row.cols-1 { grid-template-columns: 1fr; }
+    .om-cell {
+      padding: 16px 18px; border-right: 1px solid var(--grau-mittel);
+      background: var(--weiss);
+    }
+    .om-cell:last-child { border-right: none; }
+    .om-cell h4 {
+      font-size: 0.82rem; font-weight: 700; color: var(--text); margin-bottom: 5px;
+      letter-spacing: -0.01em;
+    }
+    .om-cell p { font-size: 0.75rem; color: var(--text-leicht); line-height: 1.5; }
+    .om-cell .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 7px; }
+    .om-tag {
+      font-size: 0.68rem; font-weight: 600; color: var(--rot);
+      background: var(--rot-hell); padding: 2px 7px; border-radius: 10px;
+    }
+    .om-logic-label {
+      background: var(--grau-leicht); padding: 8px 18px;
+      font-size: 0.68rem; font-weight: 700; color: var(--text-leicht);
+      letter-spacing: 0.1em; text-transform: uppercase;
+      border-top: 1.5px solid var(--grau-mittel);
+    }
+    .om-community { background: var(--rot-hell) !important; }
+    .om-community h4 { color: var(--rot); }
+
+    /* NAV CARDS */
+    .nav-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+    .nav-card {
+      background: var(--weiss); border: 1px solid var(--grau-mittel); border-radius: 10px;
+      padding: 24px 20px; text-decoration: none; color: var(--text);
+      transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; gap: 7px;
+    }
+    .nav-card:hover { border-color: var(--rot); transform: translateY(-3px); }
+    .nav-card-icon { margin-bottom: 3px; }
+    .nav-card h3 { font-size: 0.98rem; font-weight: 700; }
+    .nav-card p { font-size: 0.83rem; color: var(--text-leicht); line-height: 1.5; flex: 1; }
+    .nav-card .arrow { color: var(--rot); font-weight: 700; font-size: 0.8rem; margin-top: 4px; }
+
+    /* WALL – scrollable */
+    .wall-outer {
+      overflow-x: auto; border-radius: 10px;
+      border: 1px solid var(--grau-mittel); margin-bottom: 32px;
+      cursor: grab;
+    }
+    .wall-outer:active { cursor: grabbing; }
+    .wall-outer img { height: 420px; width: auto; max-width: none; display: block; }
+
+    /* FOUNDING MEMBERS – 3 per row */
+    .members-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .member-card {
+      border-radius: 10px; overflow: hidden;
+      border: 1px solid var(--grau-mittel);
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative; cursor: pointer;
+      flex: 0 0 calc(33.333% - 11px); min-width: 0;
+    }
+    .member-card:hover { border-color: var(--rot); transform: translateY(-3px); }
+    .member-card img { width: 100%; display: block; aspect-ratio: 1/1; object-fit: cover; }
+    .member-card-dummy {
+      background: var(--grau-leicht); display: flex; flex-direction: column;
+      align-items: center; justify-content: center; aspect-ratio: 1/1;
+      gap: 10px; color: var(--text-leicht);
+    }
+    .member-card-dummy svg { opacity: 0.3; }
+    .member-card-dummy span { font-size: 0.82rem; font-weight: 500; opacity: 0.6; }
+    .member-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.65));
+      padding: 28px 14px 12px;
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .member-card:hover .member-overlay { opacity: 1; }
+    .member-overlay a {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--rot); color: white; text-decoration: none;
+      padding: 6px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;
+      transition: background 0.2s;
+    }
+    .member-overlay a:hover { background: var(--rot-dunkel); }
+
+    /* NEWS TICKER – rötlich, seitenbreit */
+    .news-banner {
+      background: linear-gradient(135deg, #b00d26, var(--rot));
+      color: var(--weiss); padding: 0; margin-top: 64px;
+      border-radius: 12px; overflow: hidden;
+    }
+    .news-banner-head {
+      padding: 18px 28px 0; display: flex; align-items: center; gap: 12px;
+    }
+    .news-banner-head h3 {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; opacity: 0.85;
+    }
+    .news-track-wrap { overflow: hidden; padding: 0 0 4px; position: relative; }
+    .news-track {
+      display: flex; gap: 20px; padding: 16px 28px 20px;
+      transition: transform 0.5s ease;
+    }
+    .news-card {
+      flex: 0 0 300px; background: rgba(255,255,255,0.12);
+      border-radius: 8px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: background 0.2s;
+      display: flex; flex-direction: column; max-height: 400px;
+    }
+    .news-card:hover { background: rgba(255,255,255,0.2); }
+    .news-card img { width: 100%; height: 140px; object-fit: cover; display: block; }
+    .news-card-body { padding: 12px 14px 14px; }
+    .news-card-date { font-size: 0.68rem; opacity: 0.7; margin-bottom: 4px; letter-spacing: 0.04em; }
+    .news-card-title { font-family: 'Montserrat',sans-serif; font-size: 0.88rem; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+    .news-card-text {
+      font-size: 0.78rem; opacity: 0.85; line-height: 1.5;
+      display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .news-card-more {
+      font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.9);
+      text-decoration: none; margin-top: 8px; display: inline-flex;
+      align-items: center; gap: 4px; transition: gap 0.15s;
+    }
+    .news-card-more:hover { gap: 7px; }
+    .news-card a { display: block; text-decoration: none; color: white; }
+    .news-nav { display: flex; gap: 8px; padding: 0 28px 16px; }
+    .news-nav button {
+      background: rgba(255,255,255,0.15); border: none; border-radius: 50%;
+      width: 32px; height: 32px; cursor: pointer; color: white;
+      font-size: 0.9rem; transition: background 0.2s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .news-nav button:hover { background: rgba(255,255,255,0.3); }
+
+    /* FOOTER */
+    footer {
+      background: var(--text); color: rgba(255,255,255,0.65);
+      padding: 28px 40px; display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-copy { font-size: 0.82rem; }
+    .footer-links { display: flex; gap: 20px; align-items: center; }
+    .footer-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--weiss); }
+    .footer-li svg { width: 20px; height: 20px; fill: #0A66C2; display: block; }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-visual { order: -1; }
+      .om-row.cols-4 { grid-template-columns: repeat(2,1fr); }
+      .members-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      header { padding: 12px 18px; }
+      .logo-area img { height: 44px; }
+      nav { display: none; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: var(--weiss); border-top: 1px solid var(--grau-mittel); box-shadow: 0 8px 20px rgba(0,0,0,0.1); padding: 14px 0; }
+      nav.open { display: flex; }
+      nav a { padding: 11px 22px; border-bottom: 1px solid var(--grau-mittel); }
+      .linkedin-nav-btn { margin: 10px 22px 4px; width: calc(100% - 44px); justify-content: center; }
+      .hamburger { display: flex; }
+      .hero { height: 75vh; min-height: 460px; }
+      .hero-content { padding: 0 22px; }
+      .hero h1 { font-size: 2rem; }
+      .carousel-dots { left: 22px; }
+      main { padding: 0 16px 60px; }
+      .section-header { margin: 48px 0 22px; }
+      .nav-cards { grid-template-columns: 1fr 1fr; }
+      .om-row.cols-2, .om-row.cols-3, .om-row.cols-4 { grid-template-columns: 1fr; }
+      .members-grid { grid-template-columns: 1fr; }
+      footer { padding: 22px 18px; flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .nav-cards { grid-template-columns: 1fr; }
+      .stats-bar { flex-wrap: wrap; }
+      .stat-item { min-width: 50%; border-bottom: 1px solid rgba(255,255,255,0.15); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo-area">
+    <img src="images/homepage/hnhh-logo.svg" alt="Health Network Hamburg e.V. Logo" />
+    <div class="logo-text">
+      <div class="name">Health Network Hamburg e.V.</div>
+      <div class="tagline">Gemeinsam für Gesundheit</div>
+    </div>
+  </a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  <nav id="nav">
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="events.html">Events</a>
+    <a href="neuigkeiten.html">Neuigkeiten</a>
+    <a href="mitglied-werden.html" class="nav-cta">Mitglied werden</a>
+  </nav>
+</header>
+
+<!-- HERO – 8 slides: group, w061, w072, w077, w085, w128, presentation, selfie -->
+<section class="hero">
+  <div class="carousel-slide active"><img src="images/homepage/hero-01.jpg" alt="Health Network Hamburg – Gemeinschaft" /></div>
+  <div class="carousel-slide"><img src="images/homepage/hero-02.jpg" alt="Health Network Hamburg – Workshop"  loading="lazy" /></div>
+  <div class="carousel-slide"><img src="images/homepage/hero-03.jpg" alt="Health Network Hamburg – Networking"  loading="lazy" /></div>
+  <div class="carousel-slide"><img src="images/homepage/hero-04.jpg" alt="Health Network Hamburg – Workshop"  loading="lazy" /></div>
+  <div class="carousel-slide"><img src="images/homepage/hero-05.jpg" alt="Health Network Hamburg – Workshop"  loading="lazy" /></div>
+  <div class="carousel-slide"><img src="images/homepage/hero-06.jpg" alt="Health Network Hamburg – Workshop"  loading="lazy" /></div>
+  <div class="carousel-slide"><img src="images/homepage/hero-07.jpg" alt="Health Network Hamburg – Präsentation"  loading="lazy" /></div>
+  <div class="carousel-slide"><img src="images/homepage/hero-08.jpg" alt="Health Network Hamburg – Workshop"  loading="lazy" /></div>
+  <div class="carousel-slide"><img src="images/homepage/hero-09.jpg" alt="Health Network Hamburg – Networking"  loading="lazy" /></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span class="ey-upper">#HNHH</span><span class="ey-upper"> · Health Network Hamburg</span><span class="ey-name">&nbsp;e.V.</span></div>
+    <h1>Wo <em>Healthcare</em><br>auf Innovation trifft.</h1>
+    <p class="hero-desc">Das Health Network Hamburg e.V. vernetzt Menschen, die in der Metropolregion Hamburg wohnen oder arbeiten und Innovation mit Healthcare verbinden wollen.</p>
+    <div class="hero-actions">
+      <a href="mitglied-werden.html" class="btn-hero-primary">Mitglied werden →</a>
+      <a href="events.html" class="btn-hero-outline">Nächste Events</a>
+    </div>
+  </div>
+  <div class="carousel-dots" id="carouselDots"></div>
+  <span class="photo-credit">Fotos: Livia Tamaška Photography</span>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-number" id="memberCounter">—</div><div class="stat-label">Mitglieder</div></div>
+  <div class="stat-item"><div class="stat-number">11</div><div class="stat-label">Circles</div></div>
+  <div class="stat-item"><div class="stat-number">15+</div><div class="stat-label">Apéros</div></div>
+  <div class="stat-item"><div class="stat-number" style="font-size:2.6rem;">∞</div><div class="stat-label">Möglichkeiten</div></div>
+</div>
+
+<main>
+
+  <!-- ÜBER UNS -->
+  <div class="section-header"><h2>Über uns</h2><div class="section-line"></div></div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h3>Ein Netzwerk. Eine Region. Eine gemeinsame Vision.</h3>
+      <p>Das Health Network Hamburg e.V. ist die Plattform für alle, die die Gesundheit in der Metropolregion Hamburg voranbringen wollen. Wir vereinen die Perspektiven der verschiedensten Akteure der Metropolregion Hamburg.</p>
+      <p>Unser Fokus: Innovation im Healthcare-Bereich – durch persönliche Begegnung, gemeinsame Projekte und den offenen Austausch von Wissen und Erfahrung.</p>
+      <div class="about-highlight">Vernetzung ist der Schlüssel zur Innovation im Gesundheitswesen. Gemeinsam gestalten wir Hamburg gesünder.</div>
+    </div>
+    <div class="about-visual">
+      <div style="position:relative;">
+        <div class="about-img-main"><img src="images/homepage/ueber-uns-01.jpg" alt="Health Network Hamburg – Workshop Diskussion" /></div>
+        <div class="about-img-secondary"><img src="images/homepage/ueber-uns-02.jpg" alt="Health Network Hamburg – Networking" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;" /></div>
+      </div>
+      <div class="about-img-badge"><div class="num">#HNHH</div></div>
+    </div>
+  </div>
+
+  <!-- 11 CIRCLES – Operating Model layout -->
+  <div class="section-header">
+    <h2>Unsere 11 Circles</h2>
+    <div class="section-line"></div>
+    <span class="section-badge">Holacracy</span>
+  </div>
+  <p class="circles-intro">Das Health Network Hamburg e.V. ist nach Holacracy-Prinzipien organisiert – in aktuell 11 thematischen Circles, getragen vom Vorstand als General Circle für Vereinskultur, Strategie und Governance.</p>
+
+  <div class="om-container">
+    <div class="om-header">Vorstand / General Circle &nbsp;·&nbsp; Vereinskultur &nbsp;·&nbsp; Strategie &nbsp;·&nbsp; Governance</div>
+
+    <div class="om-logic-label">A &nbsp;·&nbsp; System, Policy & Regulation</div>
+    <div class="om-row cols-3">
+      <div class="om-cell">
+        <h4 style="display:flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 32 32" fill="none" style="margin-right:7px;vertical-align:middle;flex-shrink:0;"><circle cx="16" cy="16" r="11" stroke="#C8102E" stroke-width="1.75"/><circle cx="16" cy="16" r="5" stroke="#C8102E" stroke-width="1.75"/></svg>Health Policy &amp; Public Health</h4>
+        
+      </div>
+      <div class="om-cell">
+        <h4 style="display:flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 32 32" fill="none" style="margin-right:7px;vertical-align:middle;flex-shrink:0;"><circle cx="16" cy="16" r="11" stroke="#C8102E" stroke-width="1.75"/><circle cx="16" cy="16" r="5" stroke="#C8102E" stroke-width="1.75"/></svg>Legal &amp; Regulatory</h4>
+        
+      </div>
+      <div class="om-cell">
+        <h4 style="display:flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 32 32" fill="none" style="margin-right:7px;vertical-align:middle;flex-shrink:0;"><circle cx="16" cy="16" r="11" stroke="#C8102E" stroke-width="1.75"/><circle cx="16" cy="16" r="5" stroke="#C8102E" stroke-width="1.75"/></svg>Administration &amp; Öff. Gesundheitswesen</h4>
+        
+      </div>
+    </div>
+
+    <div class="om-logic-label">B &nbsp;·&nbsp; Innovation, Ventures & Financing</div>
+    <div class="om-row cols-2">
+      <div class="om-cell">
+        <h4 style="display:flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 32 32" fill="none" style="margin-right:7px;vertical-align:middle;flex-shrink:0;"><circle cx="16" cy="16" r="11" stroke="#C8102E" stroke-width="1.75"/><circle cx="16" cy="16" r="5" stroke="#C8102E" stroke-width="1.75"/></svg>Startups &amp; New Ventures</h4>
+        
+      </div>
+      <div class="om-cell">
+        <h4 style="display:flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 32 32" fill="none" style="margin-right:7px;vertical-align:middle;flex-shrink:0;"><circle cx="16" cy="16" r="11" stroke="#C8102E" stroke-width="1.75"/><circle cx="16" cy="16" r="5" stroke="#C8102E" stroke-width="1.75"/></svg>Funding &amp; Financing</h4>
+        
+      </div>
+    </div>
+
+    <div class="om-logic-label">C &nbsp;·&nbsp; Technology, Evidence & Care</div>
+    <div class="om-row cols-3">
+      <div class="om-cell">
+        <h4 style="display:flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 32 32" fill="none" style="margin-right:7px;vertical-align:middle;flex-shrink:0;"><circle cx="16" cy="16" r="11" stroke="#C8102E" stroke-width="1.75"/><circle cx="16" cy="16" r="5" stroke="#C8102E" stroke-width="1.75"/></svg>Technology &amp; AI</h4>
+        
+      </div>
+      <div class="om-cell">
+        <h4 style="display:flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 32 32" fill="none" style="margin-right:7px;vertical-align:middle;flex-shrink:0;"><circle cx="16" cy="16" r="11" stroke="#C8102E" stroke-width="1.75"/><circle cx="16" cy="16" r="5" stroke="#C8102E" stroke-width="1.75"/></svg>Science &amp; Evidence</h4>
+        
+      </div>
+      <div class="om-cell">
+        <h4 style="display:flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 32 32" fill="none" style="margin-right:7px;vertical-align:middle;flex-shrink:0;"><circle cx="16" cy="16" r="11" stroke="#C8102E" stroke-width="1.75"/><circle cx="16" cy="16" r="5" stroke="#C8102E" stroke-width="1.75"/></svg>Health Care Professionals &amp; Patients</h4>
+
+      </div>
+    </div>
+
+    <div class="om-logic-label">D &nbsp;·&nbsp; Community, Partnerships & Visibility</div>
+    <div class="om-row cols-3">
+      <div class="om-cell">
+        <h4 style="display:flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 32 32" fill="none" style="margin-right:7px;vertical-align:middle;flex-shrink:0;"><circle cx="16" cy="16" r="11" stroke="#C8102E" stroke-width="1.75"/><circle cx="16" cy="16" r="5" stroke="#C8102E" stroke-width="1.75"/></svg>Partnerships &amp; Member Activation</h4>
+        
+      </div>
+      <div class="om-cell">
+        <h4 style="display:flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 32 32" fill="none" style="margin-right:7px;vertical-align:middle;flex-shrink:0;"><circle cx="16" cy="16" r="11" stroke="#C8102E" stroke-width="1.75"/><circle cx="16" cy="16" r="5" stroke="#C8102E" stroke-width="1.75"/></svg>Apéros &amp; Events</h4>
+        
+      </div>
+      <div class="om-cell">
+        <h4 style="display:flex;align-items:center;"><svg width="14" height="14" viewBox="0 0 32 32" fill="none" style="margin-right:7px;vertical-align:middle;flex-shrink:0;"><circle cx="16" cy="16" r="11" stroke="#C8102E" stroke-width="1.75"/><circle cx="16" cy="16" r="5" stroke="#C8102E" stroke-width="1.75"/></svg>Marketing &amp; Communication</h4>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- ENTDECKE DAS NETZWERK -->
+  <div class="section-header"><h2>Entdecke das Netzwerk</h2><div class="section-line"></div></div>
+
+  <!-- WALL – volle Seitenbreite via negative margins -->
+  <div style="width:calc(100% + 48px);margin-left:-24px;overflow:hidden;line-height:0;margin-bottom:32px;border-top:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;" id="wallOuter">
+    <div style="overflow-y:auto;overflow-x:hidden;max-height:520px;cursor:ns-resize;" id="wallScroll">
+      <img
+        src="images/gruendungsmitglieder/wall.jpg"
+        alt="Unsere Kampagne 'Ich bin Gründungsmitglied'"
+        style="width:100%;display:block;"
+      />
+    </div>
+  </div>
+
+  <!-- GRÜNDUNGSMITGLIEDER -->
+  <h3 style="font-size:1.1rem;font-weight:700;margin:36px 0 16px;color:var(--text);">Gründungsmitglieder</h3>
+  <div style="position:relative;overflow:hidden;" id="membersCarousel">
+    <div style="display:flex;gap:16px;transition:transform 0.45s cubic-bezier(.4,0,.2,1);" id="membersTrack">
+
+
+      <a href="https://www.linkedin.com/in/jan-timo-ackerstaff-097206205/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Ackerstaff.png" loading="lazy" alt="Jan-Timo Ackerstaff" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Jan-Timo Ackerstaff</span></div></a>
+      <a href="https://www.linkedin.com/in/marcel-apel-7aa533124/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Apel.png" loading="lazy" alt="Marcel Apel" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Marcel Apel</span></div></a>
+      <a href="https://www.linkedin.com/in/kerstin-baasch/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Baasch.png" loading="lazy" alt="Kerstin Baasch" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Kerstin Baasch</span></div></a>
+      <a href="https://www.linkedin.com/in/dr-med-christoph-b%C3%A4umer-33797597/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Baeumer.png" loading="lazy" alt="Dr. med. Christoph Bäumer" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. med. Christoph Bäumer</span></div></a>
+      <a href="https://www.linkedin.com/in/serap-becker-2997395/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Becker.png" loading="lazy" alt="Serap Beckers" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Serap Beckers</span></div></a>
+      <a href="https://www.linkedin.com/in/michaela-bender-126376150/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Bender.png" loading="lazy" alt="Michaela Bender" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Michaela Bender</span></div></a>
+      <a href="https://www.linkedin.com/in/sebastian-bertheau/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Bertheau.png" loading="lazy" alt="Sebastian Bertheau" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Sebastian Bertheau</span></div></a>
+      <a href="https://www.linkedin.com/in/leaborgmann/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Borgmann.png" loading="lazy" alt="Dr. Lea Borgmann" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Lea Borgmann</span></div></a>
+      <a href="https://www.linkedin.com/in/claudia-breschinski/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Breschinski.png" loading="lazy" alt="Claudia Breschinski" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Claudia Breschinski</span></div></a>
+      <a href="https://www.linkedin.com/in/dr-med-stefanie-bruemmer-smith-md-frca-fficm-cert-ph-b7327066/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Bruemmer-Smith.png" loading="lazy" alt="Dr. med. Stefanie Bruemmer-Smith" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. med. Stefanie Bruemmer-Smith</span></div></a>
+      <a href="https://www.linkedin.com/in/lea-b%C3%BCcker-3b0252216/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Buecker.png" loading="lazy" alt="Lea Bücker" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Lea Bücker</span></div></a>
+      <a href="https://www.linkedin.com/in/verenabusch/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Busch.png" loading="lazy" alt="Verena Busch" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Verena Busch</span></div></a>
+      <a href="https://www.linkedin.com/in/mahnaz-buschmann-205811111/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Buschmann.png" loading="lazy" alt="Mahnaz Buschmann" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Mahnaz Buschmann</span></div></a>
+      <a href="https://www.linkedin.com/in/clarabutt/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Butt.png" loading="lazy" alt="Dr. Clara Butt" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Clara Butt</span></div></a>
+      <a href="https://www.linkedin.com/in/daniel-chennaoui/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Chennaoui.png" loading="lazy" alt="Daniel Chennaoui" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Daniel Chennaoui</span></div></a>
+      <a href="https://www.linkedin.com/in/dockonebirtechristiansen/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Christiansen.png" loading="lazy" alt="Birte Christiansen" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Birte Christiansen</span></div></a>
+      <a href="https://www.linkedin.com/in/jan-degwert-4160042b1/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Degwert.png" loading="lazy" alt="Jan Degwert" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Jan Degwert</span></div></a>
+      <a href="https://www.linkedin.com/in/evasusannedietrich/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Dietrich.png" loading="lazy" alt="Prof. Dr. Eva Susanne Dietrich" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Prof. Dr. Eva Susanne Dietrich</span></div></a>
+      <a href="https://www.linkedin.com/in/ulrike-dobelstein-l%C3%BCthe/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Dobelstein-Luethe.png" loading="lazy" alt="Ulrike Dobelstein-Luethe" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Ulrike Dobelstein-Luethe</span></div></a>
+      <a href="https://www.linkedin.com/in/dr-lara-ebenfeld-97b16b28/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Ebenfeld.png" loading="lazy" alt="Dr. Lara Ebenfeld" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Lara Ebenfeld</span></div></a>
+      <a href="https://www.linkedin.com/in/maren-diebel-ebers-17bb14231/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Ebers.png" loading="lazy" alt="Dr. med. Maren Ebers" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. med. Maren Ebers</span></div></a>
+      <a href="https://www.linkedin.com/in/ljuba-ehrhardt-571b06177/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Ehrhardt.png" loading="lazy" alt="Ljuba Ehrhardt" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Ljuba Ehrhardt</span></div></a>
+      <a href="https://www.linkedin.com/in/michael-faje-08746b/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Faje.png" loading="lazy" alt="Michael Faje" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Michael Faje</span></div></a>
+      <a href="https://www.linkedin.com/in/anne-feldt/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Feldt.png" loading="lazy" alt="Anne Feldt" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Anne Feldt</span></div></a>
+      <a href="https://www.linkedin.com/in/konradfenderich/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Fenderich.png" loading="lazy" alt="Konrad Fenderich" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Konrad Fenderich</span></div></a>
+      <a href="https://www.linkedin.com/in/thomas-frahm-b6276615/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Frahm.png" loading="lazy" alt="Thomas Frahm" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Thomas Frahm</span></div></a>
+      <a href="https://www.linkedin.com/in/nadinegalandi/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Galandi.png" loading="lazy" alt="Prof. Dr. Nadine Galandi" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Prof. Dr. Nadine Galandi</span></div></a>
+      <a href="https://www.linkedin.com/in/dr-christian-gatzka/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Gatzka.png" loading="lazy" alt="Dr. med. Christian Gatzka" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. med. Christian Gatzka</span></div></a>
+      <a href="https://www.linkedin.com/in/dr-katja-gehrke-302b82206/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Gehrke.png" loading="lazy" alt="Dr. Katja Gehrke" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Katja Gehrke</span></div></a>
+      <a href="https://www.linkedin.com/in/marc-gerlach/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Gerlach.png" loading="lazy" alt="Marc Gerlach" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Marc Gerlach</span></div></a>
+      <a href="https://www.linkedin.com/in/maren-gesina-gl%C3%BCer/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Glueer.png" loading="lazy" alt="Dr. Maren Gesina Glüer" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Maren Gesina Glüer</span></div></a>
+      <a href="https://www.linkedin.com/in/friederike-goeters-63a028183/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Goeters.png" loading="lazy" alt="Dr. iur. Friederike Goeters" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. iur. Friederike Goeters</span></div></a>
+      <a href="https://www.linkedin.com/in/moritz-goeldner/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Goeldner.png" loading="lazy" alt="Prof. Dr. Moritz Göldner" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Prof. Dr. Moritz Göldner</span></div></a>
+      <a href="https://www.linkedin.com/in/mike-gross-015b13128/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Gross.png" loading="lazy" alt="Mike Gross" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Mike Gross</span></div></a>
+      <a href="https://www.linkedin.com/in/adam10x/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Gruender.png" loading="lazy" alt="Adam Gründer" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Adam Gründer</span></div></a>
+      <a href="https://www.linkedin.com/in/eloygut/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Gut.png" loading="lazy" alt="Eloy Gut" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Eloy Gut</span></div></a>
+      <a href="https://www.linkedin.com/in/parvaneh-h-18b3b58b/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Hakim.png" loading="lazy" alt="Parvaneh Hakim" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Parvaneh Hakim</span></div></a>
+      <a href="https://www.linkedin.com/in/heiko-hauptmann/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Hauptmann.png" loading="lazy" alt="Heiko Hauptmann" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Heiko Hauptmann</span></div></a>
+      <a href="https://www.linkedin.com/in/dr-elena-heber-432438104/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Heber.png" loading="lazy" alt="Dr. Elena Heber" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Elena Heber</span></div></a>
+      <a href="https://www.linkedin.com/in/angela-hemme/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Hemme.png" loading="lazy" alt="Angela Hemme" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Angela Hemme</span></div></a>
+      <a href="https://www.linkedin.com/in/dr-christoph-hillen-b011441b6/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Hillen.png" loading="lazy" alt="Dr. Christoph Hillen" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Christoph Hillen</span></div></a>
+      <a href="https://www.linkedin.com/in/mareike-h%C3%B6ck/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Hoeck.png" loading="lazy" alt="Mareike Höck" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Mareike Höck</span></div></a>
+      <a href="https://www.linkedin.com/in/diana-hohage-31b57019b/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Hohage.png" loading="lazy" alt="Diana Hohage" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Diana Hohage</span></div></a>
+      <a href="https://www.linkedin.com/in/johanna-hollank-46902bb9/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Hollank.png" loading="lazy" alt="Johanna Hollank" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Johanna Hollank</span></div></a>
+      <a href="https://www.linkedin.com/in/ingohorak/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Horak.png" loading="lazy" alt="Ingo Horak" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Ingo Horak</span></div></a>
+      <a href="https://www.linkedin.com/in/ingmar-janson-3b715a13/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Janson.png" loading="lazy" alt="Ingmar Janson" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Ingmar Janson</span></div></a>
+      <a href="https://www.linkedin.com/in/dr-joachim-jung-a0a694153/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Jung.png" loading="lazy" alt="Dr. Joachim Jung" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. iur. Joachim Jung</span></div></a>
+      <a href="https://www.linkedin.com/in/kerem-koc-64344121a/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Koc.png" loading="lazy" alt="Kerem Koc" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Kerem Koc</span></div></a>
+      <a href="https://www.linkedin.com/in/philip-kopf/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Kopf.png" loading="lazy" alt="Philip Kopf" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Philip Kopf</span></div></a>
+      <a href="https://www.linkedin.com/in/dr-tobias-krick/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Krick.png" loading="lazy" alt="Dr. Tobias Krick" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Tobias Krick</span></div></a>
+      <a href="https://www.linkedin.com/in/maxikugler/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Kugler.png" loading="lazy" alt="Maximiliane Kugler" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Maximiliane Kugler</span></div></a>
+      <a href="https://www.linkedin.com/in/peter-lahl/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Lahl.png" loading="lazy" alt="Peter Lahl" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Peter Lahl</span></div></a>
+      <a href="https://www.linkedin.com/in/sebastian-lempfert-800a19295/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Lempfert.png" loading="lazy" alt="Sebastian Lempfert" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Sebastian Lempfert</span></div></a>
+      <a href="https://www.linkedin.com/in/juliane-le%C3%9Fmann-281659b2/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Lessmann.png" loading="lazy" alt="Juliane Leßmann" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Juliane Leßmann</span></div></a>
+      <a href="https://www.linkedin.com/in/claudialinke/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Linke.png" loading="lazy" alt="Dr. Claudia Linke" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Claudia Linke</span></div></a>
+      <a href="https://www.linkedin.com/in/dr-stefanie-lipsky-22ab6011b/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Lipsky.png" loading="lazy" alt="Dr. Stefanie Lipsky" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Stefanie Lipsky</span></div></a>
+      <a href="https://www.linkedin.com/in/heinz-lohmann-4983836a/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Lohmann.png" loading="lazy" alt="Heinz Lohmann" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Heinz Lohmann</span></div></a>
+      <a href="https://www.linkedin.com/in/olga-lysak/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Lysak.png" loading="lazy" alt="Olga Lysak" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Olga Lysak</span></div></a>
+      <a href="https://www.linkedin.com/in/daniel-macgowan-von-holstein-92584b38/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/MacGowan.png" loading="lazy" alt="Daniel MacGowan" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Daniel MacGowan</span></div></a>
+      <a href="https://www.linkedin.com/in/prof-dr-andreas-meusch-37b52871/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Meusch.png" loading="lazy" alt="Prof. Dr. Andreas Meusch" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Prof. Dr. Andreas Meusch</span></div></a>
+      <a href="https://www.linkedin.com/in/dr-justus-meyer/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Meyer.png" loading="lazy" alt="Dr. Justus Meyer" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Justus Meyer</span></div></a>
+      <a href="https://www.linkedin.com/in/mirmehrkar-evaluation/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Mirmehrkar.png" loading="lazy" alt="Amir Mirmehrkar" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Amir Mirmehrkar</span></div></a>
+      <a href="https://www.linkedin.com/in/dr-maya-m%C3%B6hr-b2907b66/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Moehr.png" loading="lazy" alt="Dr. Maya Möhr" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Maya Möhr</span></div></a>
+      <a href="https://www.linkedin.com/in/meilin-m%C3%B6llenkamp-621aa8103/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Moellenkamp.png" loading="lazy" alt="Meilin Möllenkamp" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Meilin Möllenkamp</span></div></a>
+      <a href="https://www.linkedin.com/in/andreas-moller-b83410/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Moeller.png" loading="lazy" alt="Andreas Möller" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Andreas Möller</span></div></a>
+      <a href="https://www.linkedin.com/in/jasmin-m%C3%BCller-ab133582/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Mueller.png" loading="lazy" alt="Jasmin Müller" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Jasmin Müller</span></div></a>
+      <a href="https://www.linkedin.com/in/muellerdodthealthcaretransformation/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Mueller-Dodt.png" loading="lazy" alt="Janine Müller-Dodt" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Janine Müller-Dodt</span></div></a>
+      <a href="https://www.linkedin.com/in/kathleen-munstermann/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Munstermann-Senff.png" loading="lazy" alt="Kathleen Munstermann-Senff" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Kathleen Munstermann-Senff</span></div></a>
+      <a href="https://www.linkedin.com/in/claudianacci/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Nacci.png" loading="lazy" alt="Claudia Nacci" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Claudia Nacci</span></div></a>
+      <a href="https://www.linkedin.com/in/thomas-neef/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Neef.png" loading="lazy" alt="Thomas Neef" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Thomas Neef</span></div></a>
+      <a href="https://www.linkedin.com/in/matthias-nickel-61b039a3/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Nickel.png" loading="lazy" alt="Matthias Nickel" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Matthias Nickel</span></div></a>
+      <a href="https://www.linkedin.com/in/corinna-niebling/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Niebling.png" loading="lazy" alt="Corinna Niebling" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Corinna Niebling</span></div></a>
+      <a href="https://www.linkedin.com/in/dennis-oertwig-333202156/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Oertwig.png" loading="lazy" alt="Dennis Oertwig" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dennis Oertwig</span></div></a>
+      <a href="https://www.linkedin.com/in/gillespenning/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Penning.png" loading="lazy" alt="Gilles Penning" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Gilles Penning</span></div></a>
+      <a href="https://www.linkedin.com/in/bernhard-poel/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Poel.png" loading="lazy" alt="Bernhard Poel" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Bernhard Poel</span></div></a>
+      <a href="https://www.linkedin.com/in/christian-ramcke/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Ramcke.png" loading="lazy" alt="Christian Ramcke" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Christian Ramcke</span></div></a>
+      <a href="https://www.linkedin.com/in/silkereuter/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Reuter.png" loading="lazy" alt="Silke Reuter" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Silke Reuter</span></div></a>
+      <a href="https://www.linkedin.com/in/jessica-rinne/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Rinne.png" loading="lazy" alt="Jessica Rinne" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Jessica Rinne</span></div></a>
+      <a href="https://www.linkedin.com/in/konrad-rippmann-15618774/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Rippmann.png" loading="lazy" alt="Dr. med. Konrad Rippmann" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. med. Konrad Rippmann</span></div></a>
+      <a href="https://www.linkedin.com/in/marc-rohde-97b1742b/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Rohde.png" loading="lazy" alt="Marc Rohde" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Marc Rohde</span></div></a>
+      <a href="https://www.linkedin.com/in/friederike-rosemann-51086598/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Rosemann.png" loading="lazy" alt="Friederike Rosemann" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Friederike Rosemann</span></div></a>
+      <a href="https://www.linkedin.com/in/christian-rosenzweig-consultant/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Rosenzweig.png" loading="lazy" alt="Christian Rosenzweig" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Christian Rosenzweig</span></div></a>
+      <a href="https://www.linkedin.com/in/peter-saade-2526629b/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Saade.png" loading="lazy" alt="Peter Saade" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Peter Saade</span></div></a>
+      <a href="https://www.linkedin.com/in/sarah-sch%C3%A4ffer/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Schaeffer.png" loading="lazy" alt="Sarah Schäffer" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Sarah Schäffer</span></div></a>
+      <a href="https://www.linkedin.com/in/enrico-schick-30a02581/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Schick.png" loading="lazy" alt="Enrico Schick" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Enrico Schick</span></div></a>
+      <a href="https://www.linkedin.com/in/anke-schlieker-7068aa12a/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Schlieker.png" loading="lazy" alt="Anke Schlieker" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Anke Schlieker</span></div></a>
+      <a href="https://www.linkedin.com/in/dr-markus-schlobohm/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Schlobohm.png" loading="lazy" alt="Dr. Markus Schlobohm" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Markus Schlobohm</span></div></a>
+      <a href="https://www.linkedin.com/in/juergenschmidt/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Schmidt.png" loading="lazy" alt="Jürgen Schmidt" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Jürgen Schmidt</span></div></a>
+      <a href="https://www.linkedin.com/in/alina-schmidt-pfitzner-02a1aa186/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Schmidt-Pfitzner.png" loading="lazy" alt="Alina Schmidt-Pfitzner" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Alina Schmidt-Pfitzner</span></div></a>
+      <a href="https://www.linkedin.com/in/annikampeter/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Schneider.png" loading="lazy" alt="Dr. Annika Schneider (geb. Peter)" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Annika Schneider (geb. Peter)</span></div></a>
+      <a href="https://www.linkedin.com/in/robin-christopher-schoss/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Schoss.png" loading="lazy" alt="Dr. iur. Robin Schoss" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. iur. Robin Schoss</span></div></a>
+      <a href="https://www.linkedin.com/in/stefanie-schuppenhauer/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Schuppenhauer.png" loading="lazy" alt="Stefanie Schuppenhauer" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Stefanie Schuppenhauer</span></div></a>
+      <a href="https://www.linkedin.com/in/heinrich-schwarz-phd-899a4/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Schwarz.png" loading="lazy" alt="Dr. Heinrich Schwarz" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Heinrich Schwarz</span></div></a>
+      <a href="https://www.linkedin.com/in/anja-schwind-86b179249/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Schwind.png" loading="lazy" alt="Anja Schwind" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Anja Schwind</span></div></a>
+      <a href="https://www.linkedin.com/in/dr-med-viyan-sido-624a4b1b2/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Sido.png" loading="lazy" alt="Dr. med. Viyan Sido" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. med. Viyan Sido</span></div></a>
+      <a href="https://www.linkedin.com/in/ssingh24/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Singh.png" loading="lazy" alt="Sanjiv (Steen) Singh" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Sanjiv (Steen) Singh</span></div></a>
+      <a href="https://www.linkedin.com/in/rafalsteciuk/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Steciuk.png" loading="lazy" alt="Rafael Steciuk" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Rafael Steciuk</span></div></a>
+      <a href="https://www.linkedin.com/in/oliver-struckmeier/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Struckmeier.png" loading="lazy" alt="Oliver Struckmeier" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Oliver Struckmeier</span></div></a>
+      <a href="https://www.linkedin.com/in/friderike-st%C3%BCwert-a66402191/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Stuewert.png" loading="lazy" alt="Friderike Stüwert, MD" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Friderike Stüwert, MD</span></div></a>
+      <a href="https://www.linkedin.com/in/folke-tedsen-105619255/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Tedsen.png" loading="lazy" alt="Folke Tedsen" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Folke Tedsen</span></div></a>
+      <a href="https://www.linkedin.com/in/frithjof-thale/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Thale.png" loading="lazy" alt="Frithjof Thale" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Frithjof Thale</span></div></a>
+      <a href="https://www.linkedin.com/in/katrin-thieken-330492/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Thieken.png" loading="lazy" alt="Katrin Thieken" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Katrin Thieken</span></div></a>
+      <a href="https://www.linkedin.com/in/jacob-thomas-germany/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Thomas.png" loading="lazy" alt="Jacob Thomas" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Jacob Thomas</span></div></a>
+      <a href="https://www.linkedin.com/in/karina-tietje-30151a2/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Tietje.png" loading="lazy" alt="Karina Tietje" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Karina Tietje</span></div></a>
+      <a href="https://www.linkedin.com/in/robert-tubis/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Tubis.png" loading="lazy" alt="Robert Tubis" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Robert Tubis</span></div></a>
+      <a href="https://www.linkedin.com/in/alisatuerck/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Tuerck.png" loading="lazy" alt="Alisa Türck" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Alisa Türck</span></div></a>
+      <a href="https://www.linkedin.com/in/carolin-volkwein-54372217b/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Volkwein.png" loading="lazy" alt="Carolin Volkwein" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Carolin Volkwein</span></div></a>
+      <a href="https://www.linkedin.com/in/philippvolotas/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Volotas.png" loading="lazy" alt="Philipp Volotas" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Philipp Volotas</span></div></a>
+      <a href="https://www.linkedin.com/in/rasmus-weber-225557163/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Weber.png" loading="lazy" alt="Rasmus Weber" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Rasmus Weber</span></div></a>
+      <a href="https://www.linkedin.com/in/thomas-wehner-7b6760125/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Wehner.png" loading="lazy" alt="Thomas Wehner" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Thomas Wehner</span></div></a>
+      <a href="https://www.linkedin.com/in/alissa-wenzel/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Wenzel.png" loading="lazy" alt="Alissa Wenzel" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Alissa Wenzel</span></div></a>
+      <a href="https://www.linkedin.com/in/jessica-wergin-5644b731/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Wergin.png" loading="lazy" alt="Jessica Wergin" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Jessica Wergin</span></div></a>
+      <a href="https://www.linkedin.com/in/benjamin-westerhoff/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Westerhoff.png" loading="lazy" alt="Dr. Benjamin Westerhoff" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Dr. Benjamin Westerhoff</span></div></a>
+      <a href="https://www.linkedin.com/in/jeannettewiedemann/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Wiedemann.png" loading="lazy" alt="Jeannette Wiedemann" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Jeannette Wiedemann</span></div></a>
+      <a href="https://www.linkedin.com/in/heinz-wilming-002a012a/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Wilming.png" loading="lazy" alt="Heinz Wilming" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Heinz Wilming</span></div></a>
+      <a href="https://www.linkedin.com/in/anncarolinzorn/" target="_blank" style="flex:0 0 calc(33.333% - 11px);min-width:0;border-radius:10px;overflow:hidden;border:1px solid #e0e0e0;position:relative;display:block;text-decoration:none;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='#C8102E';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.transform='translateY(0)'"><img src="/images/gruendungsmitglieder/Zorn.png" loading="lazy" alt="Ann Carolin Zorn" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;" /><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.68));padding:28px 14px 12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:#C8102E;color:white;padding:6px 12px;border-radius:4px;font-size:0.75rem;font-weight:600;font-family:Inter,sans-serif;">Ann Carolin Zorn</span></div></a>
+            
+
+    </div>
+    <!-- Carousel nav -->
+    <div style="display:flex;gap:10px;margin-top:14px;justify-content:center;">
+      <button onclick="memberCarousel(-1)" style="background:none;border:1.5px solid #e0e0e0;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:1rem;color:#1a1a1a;transition:border-color 0.2s;display:flex;align-items:center;justify-content:center;" onmouseover="this.style.borderColor='#C8102E';this.style.color='#C8102E'" onmouseout="this.style.borderColor='#e0e0e0';this.style.color='#1a1a1a'">&#8592;</button>
+      <button onclick="memberCarousel(1)" style="background:none;border:1.5px solid #e0e0e0;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:1rem;color:#1a1a1a;transition:border-color 0.2s;display:flex;align-items:center;justify-content:center;" onmouseover="this.style.borderColor='#C8102E';this.style.color='#C8102E'" onmouseout="this.style.borderColor='#e0e0e0';this.style.color='#1a1a1a'">&#8594;</button>
+    </div>
+  </div>
+
+  <!-- NAV CARDS -->  <!-- NAV CARDS -->
+  <div class="nav-cards" style="margin-top:48px;margin-bottom:32px;">
+    <a href="neuigkeiten.html" class="nav-card">
+      <div class="nav-card-icon">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+          <path d="M4 7C4 6.448 4.448 6 5 6H22L28 12V26C28 26.552 27.552 27 27 27H5C4.448 27 4 26.552 4 26V7Z" stroke="#C8102E" stroke-width="1.75" stroke-linejoin="round"/>
+          <path d="M22 6L22 12H28" stroke="#C8102E" stroke-width="1.75" stroke-linejoin="round"/>
+          <path d="M8 15H24" stroke="#C8102E" stroke-width="1.75" stroke-linecap="round"/>
+          <path d="M8 19.5H14M8 22H14" stroke="#C8102E" stroke-width="1.25" stroke-linecap="round"/>
+          <path d="M17 19.5H24M17 22H24" stroke="#C8102E" stroke-width="1.25" stroke-linecap="round"/>
+          <rect x="8" y="9" width="7" height="5" rx="1" stroke="#C8102E" stroke-width="1.25"/>
+          <path d="M17 10H24M17 12.5H22" stroke="#C8102E" stroke-width="1.25" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>Neuigkeiten</h3>
+      <p>Aktuelle Berichte, Ankündigungen und Einblicke aus dem Health Network Hamburg.</p>
+      <div class="arrow">Alle Neuigkeiten →</div>
+    </a>
+    <a href="events.html" class="nav-card">
+      <div class="nav-card-icon">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect x="5" y="7" width="22" height="20" rx="2" stroke="#C8102E" stroke-width="1.75"/><path d="M5 13H27" stroke="#C8102E" stroke-width="1.75"/><path d="M11 4V10" stroke="#C8102E" stroke-width="1.75" stroke-linecap="round"/><path d="M21 4V10" stroke="#C8102E" stroke-width="1.75" stroke-linecap="round"/><circle cx="11" cy="19" r="1.5" fill="#C8102E"/><circle cx="16" cy="19" r="1.5" fill="#C8102E"/><circle cx="21" cy="19" r="1.5" fill="#C8102E"/></svg>
+      </div>
+      <h3>Events</h3>
+      <p>Die Apéros sind offen für alle, auch auswärtige Gäste. Workshops sind nur für Mitglieder.</p>
+      <p>Jetzt anmelden!</p>
+      <div class="arrow">Zu den Events →</div>
+    </a>
+    <a href="mitglied-werden.html" class="nav-card">
+      <div class="nav-card-icon">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><circle cx="13" cy="11" r="4.5" stroke="#C8102E" stroke-width="1.75"/><path d="M5 27C5 22.029 8.686 19 13 19" stroke="#C8102E" stroke-width="1.75" stroke-linecap="round"/><path d="M20 19L27 19M27 19L24 16M27 19L24 22" stroke="#C8102E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Mitglied werden</h3>
+      <p>Werde Teil des Netzwerks und gestalte Gesundheit in der Metropolregion Hamburg!</p>
+      <div class="arrow">Zur Anmeldung →</div>
+    </a>
+    <a href="kontakt.html" class="nav-card">
+      <div class="nav-card-icon">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="17" rx="2" stroke="#C8102E" stroke-width="1.75"/><path d="M4 11L16 19L28 11" stroke="#C8102E" stroke-width="1.75" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Kontakt</h3>
+      <p>Fragen, Anregungen oder Kooperationsanfragen? Wir freuen uns von Dir zu hören!</p>
+      <div class="arrow">Schreib uns →</div>
+    </a>
+  </div>
+
+    <!-- NEWS BANNER – rötlich mit Karussell -->
+  <div class="news-banner" id="newsBanner">
+    <div class="news-banner-head">
+      <svg width="16" height="16" viewBox="0 0 32 32" fill="none">
+        <path d="M4 7C4 6.448 4.448 6 5 6H22L28 12V26C28 26.552 27.552 27 27 27H5C4.448 27 4 26.552 4 26V7Z" stroke="white" stroke-width="1.75" stroke-linejoin="round"/>
+        <path d="M22 6L22 12H28" stroke="white" stroke-width="1.75" stroke-linejoin="round"/>
+        <path d="M8 15H24" stroke="white" stroke-width="1.75" stroke-linecap="round"/>
+        <path d="M8 19.5H14M8 22H14" stroke="white" stroke-width="1.25" stroke-linecap="round"/>
+        <path d="M17 19.5H24M17 22H24" stroke="white" stroke-width="1.25" stroke-linecap="round"/>
+        <rect x="8" y="9" width="7" height="5" rx="1" stroke="white" stroke-width="1.25"/>
+        <path d="M17 10H24M17 12.5H22" stroke="white" stroke-width="1.25" stroke-linecap="round"/>
+      </svg>
+      <h3>Neuigkeiten</h3>
+    </div>
+    <div class="news-track-wrap">
+      <div class="news-track" id="newsTrack">
+        <!-- Filled by JS from Google Sheets or fallback -->
+      </div>
+    </div>
+    <div class="news-nav">
+      <button onclick="newsNav(-1)">&#8592;</button>
+      <button onclick="newsNav(1)">&#8594;</button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-copy">&copy; <span id="year"></span> Health Network Hamburg e.V.</div>
+  <div class="footer-links">
+    <a href="kontakt.html">Kontakt</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="https://www.linkedin.com/groups/13128513/" target="_blank" class="footer-li">
+      <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script data-cfasync="false">
+// ── MENU ──
+function toggleMenu() {
+  document.getElementById('nav').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var nav = document.getElementById('nav'), h = document.getElementById('hamburger');
+  if (nav && h && !nav.contains(e.target) && !h.contains(e.target)) nav.classList.remove('open');
+});
+
+// ── YEAR ──
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ── HERO CAROUSEL ──
+var heroSlides = document.querySelectorAll('.carousel-slide');
+var heroDots   = document.getElementById('carouselDots');
+var heroCur    = 0;
+
+// Define heroGo FIRST before it is referenced anywhere
+function heroGo(n) {
+  heroSlides[heroCur].classList.remove('active');
+  var oldDot = heroDots.children[heroCur];
+  if (oldDot) oldDot.classList.remove('active');
+  heroCur = ((n % heroSlides.length) + heroSlides.length) % heroSlides.length;
+  heroSlides[heroCur].classList.add('active');
+  var newDot = heroDots.children[heroCur];
+  if (newDot) newDot.classList.add('active');
+}
+
+// Build dots AFTER heroGo is defined
+for (var _i = 0; _i < heroSlides.length; _i++) {
+  (function(idx) {
+    var btn = document.createElement('button');
+    btn.className = 'dot' + (idx === 0 ? ' active' : '');
+    btn.onclick = function() { heroGo(idx); };
+    heroDots.appendChild(btn);
+  })(_i);
+}
+
+// Auto-advance
+setInterval(function() { heroGo(heroCur + 1); }, 5000);
+
+
+// ── MEMBER CAROUSEL ──
+function memberCarousel(dir) {
+  var track = document.getElementById('membersTrack');
+  if (!track) return;
+
+  if (!track._init) {
+    track._init = true;
+    track._real = track.children.length;
+    for (var k = 0; k < 3; k++) {
+      track.appendChild(track.children[k].cloneNode(true));
+    }
+    track._pos = 0;
+  }
+
+  var real = track._real;
+
+  // Get container width – use offsetWidth of the carousel wrapper
+  var container = document.getElementById('membersCarousel') || track.parentElement;
+  var containerW = container.offsetWidth;
+  if (!containerW || containerW === 0) containerW = window.innerWidth - 48;
+
+  // Each card is calc(33.333% - 11px), gap is 16px
+  var cardW = (containerW - 32) / 3;
+  var stepW = cardW + 16;
+
+  function moveTo(p, animate) {
+    track.style.transition = animate ? 'transform 0.45s cubic-bezier(.4,0,.2,1)' : 'none';
+    track.style.transform = 'translateX(-' + (p * stepW) + 'px)';
+    track._pos = p;
+  }
+
+  // Going backwards from 0: silently jump to clones at end, then step back
+  if (dir === -1 && track._pos === 0) {
+    moveTo(real, false);
+    track.offsetHeight; // force reflow
+  }
+
+  moveTo(track._pos + dir, true);
+
+  // After reaching clones, silently reset to real position
+  if (track._pos >= real) {
+    setTimeout(function() {
+      moveTo(track._pos - real, false);
+    }, 460);
+  }
+}
+
+// ── NEWS NAVIGATION ──
+function newsNav(dir) {
+  var track = document.getElementById('newsTrack');
+  if (!track) return;
+  window._newsPos = window._newsPos || 0;
+  var visible = window.innerWidth < 600 ? 1 : window.innerWidth < 900 ? 2 : 3;
+  var max = Math.max(0, track.querySelectorAll('.news-card').length - visible);
+  window._newsPos = Math.max(0, Math.min(max, window._newsPos + dir));
+  track.style.transform = 'translateX(-' + (window._newsPos * 320) + 'px)';
+}
+
+// ── WALL SCROLL ──
+var wallScroll = document.getElementById('wallScroll');
+if (wallScroll) {
+  var _drag = false, _startY, _scrollTop;
+  wallScroll.addEventListener('mousedown', function(e) { _drag=true; _startY=e.pageY; _scrollTop=wallScroll.scrollTop; });
+  document.addEventListener('mouseup', function() { _drag=false; });
+  wallScroll.addEventListener('mousemove', function(e) {
+    if (!_drag) return;
+    e.preventDefault();
+    wallScroll.scrollTop = _scrollTop - (e.pageY - _startY);
+  });
+}
+
+// ── MEMBER COUNTER ──
+var counterEl = document.getElementById('memberCounter');
+function animateCounter(target) {
+  var n = 0, step = target / (1800 / 16);
+  var t = setInterval(function() {
+    n += step;
+    if (n >= target) { n = target; clearInterval(t); }
+    counterEl.textContent = Math.floor(n) + '+';
+  }, 16);
+}
+fetch('https://docs.google.com/spreadsheets/d/1inAiEvDK3ORJUCkBkaTZVbK8PWJ7U8gIlV3hpEJoXMw/gviz/tq?tqx=out:csv&sheet=Mitgliedscounter&range=A1')
+  .then(function(r) { return r.text(); })
+  .then(function(t) { var v = parseInt(t.replace(/[^0-9]/g,'')); animateCounter(v > 0 ? v : 120); })
+  .catch(function() { animateCounter(120); });
+
+// ── NEWS from Google Sheets ──
+// Sheet columns: A=Code, B=Datum (DD.MM.YYYY), C=Titel, D=Text, E=Link
+// Images: images/news/{Code}/{Code}-01.jpg, -02.jpg, ...
+
+function tryLoadImages(code, callback) {
+  // Try loading images -01, -02, -03... until 404
+  var imgs = [];
+  var base = 'images/news/' + code + '/' + code;
+  var maxTry = 6;
+  var tried = 0;
+
+  function tryNext(n) {
+    if (n > maxTry) { callback(imgs); return; }
+    var num = (n < 10 ? '0' : '') + n;
+    var url = base + '-' + num + '.jpg';
+    var img = new Image();
+    img.onload = function() { imgs.push(url); tryNext(n + 1); };
+    img.onerror = function() { callback(imgs); }; // stop on first 404
+    img.src = url;
+  }
+  tryNext(1);
+}
+
+function buildImgCarousel(imgs, title) {
+  if (!imgs || imgs.length === 0) return '';
+  return '<img src="' + imgs[0] + '" alt="' + title + '" style="width:100%;height:160px;object-fit:cover;display:block;border-radius:8px 8px 0 0;" />';
+}
+
+function buildNewsCard(item) {
+  var card = document.createElement('div');
+  card.className = 'news-card';
+  var imgHtml = buildImgCarousel(item.imgs || [], item.title);
+  var displayText = item.shortText || item.text || '';
+  var newsUrl = 'neuigkeiten.html' + (item.code ? '#' + item.code : '');
+  card.innerHTML = imgHtml +
+    '<div class="news-card-body">' +
+    '<div class="news-card-date">' + item.date + '</div>' +
+    '<div class="news-card-title">' + item.title + '</div>' +
+    '<div class="news-card-text">' + displayText + '</div>' +
+    '<a href="' + newsUrl + '" class="news-card-more">Mehr erfahren &#8250;</a>' +
+    '</div>';
+  return card;
+}
+
+function renderNews(items) {
+  var track = document.getElementById('newsTrack');
+  if (!track) return;
+  track.innerHTML = '<div class="news-card" style="display:flex;align-items:center;justify-content:center;min-width:280px;opacity:0.6;"><div class="news-card-body"><div class="news-card-title">Neuigkeiten werden geladen…</div></div></div>';
+
+  // For each item, try to load images from local folder, then render card
+  var pending = items.length;
+  var cards = new Array(items.length);
+
+  if (pending === 0) {
+    track.innerHTML = '';
+    return;
+  }
+
+  items.forEach(function(item, idx) {
+    if (item.code) {
+      tryLoadImages(item.code, function(imgs) {
+        item.imgs = imgs;
+        cards[idx] = buildNewsCard(item);
+        pending--;
+        if (pending === 0) {
+          track.innerHTML = '';
+          cards.forEach(function(card) { if (card) track.appendChild(card); });
+        }
+      });
+    } else {
+      item.imgs = [];
+      cards[idx] = buildNewsCard(item);
+      pending--;
+      if (pending === 0) {
+        track.innerHTML = '';
+        cards.forEach(function(card) { if (card) track.appendChild(card); });
+      }
+    }
+  });
+}
+
+// Event delegation for image carousel clicks
+document.addEventListener('click', function(e) {
+  var nc = e.target.getAttribute('data-nc');
+  if (!nc) return;
+  var wrap = document.getElementById(nc);
+  if (!wrap) return;
+  var imgs = wrap.querySelectorAll('img');
+  var dots = wrap.querySelectorAll('[data-nc][data-idx]');
+  var cur = parseInt(wrap.getAttribute('data-cur')) || 0;
+  var dir = e.target.getAttribute('data-dir');
+  var idx = e.target.getAttribute('data-idx');
+  var next = dir === 'prev' ? (cur - 1 + imgs.length) % imgs.length
+           : dir === 'next' ? (cur + 1) % imgs.length
+           : parseInt(idx);
+  imgs[cur].style.opacity = 0;
+  imgs[next].style.opacity = 1;
+  dots.forEach(function(d) {
+    d.style.background = parseInt(d.getAttribute('data-idx')) === next
+      ? 'white' : 'rgba(255,255,255,0.5)';
+  });
+  wrap.setAttribute('data-cur', next);
+});
+
+function parseCSV(text) {
+  var rows = [];
+  var row = [];
+  var cur = '';
+  var inQ = false;
+  for (var i = 0; i < text.length; i++) {
+    var ch = text[i];
+    if (ch === '"') {
+      if (inQ && text[i+1] === '"') { cur += '"'; i++; }
+      else { inQ = !inQ; }
+    } else if (ch === ',' && !inQ) {
+      row.push(cur); cur = '';
+    } else if ((ch === '\n' || (ch === '\r' && text[i+1] === '\n')) && !inQ) {
+      if (ch === '\r') i++;
+      row.push(cur); cur = '';
+      rows.push(row); row = [];
+    } else {
+      cur += ch;
+    }
+  }
+  if (cur || row.length) { row.push(cur); rows.push(row); }
+  return rows;
+}
+
+// Fetch news from Google Sheets
+// Columns: A=Code, B=Datum, C=Titel, D=Text, E=Link
+fetch('https://docs.google.com/spreadsheets/d/1inAiEvDK3ORJUCkBkaTZVbK8PWJ7U8gIlV3hpEJoXMw/gviz/tq?tqx=out:csv&sheet=News')
+  .then(function(r) { return r.text(); })
+  .then(function(csv) {
+    var rows = parseCSV(csv);
+    var items = rows.slice(1).map(function(cols) {
+      var code      = (cols[0]||'').trim();
+      var date      = (cols[1]||'').trim();
+      var title     = (cols[2]||'').trim();
+      var shortText = (cols[3]||'').trim();
+      var text      = (cols[4]||'').trim();
+      var link      = (cols[5]||'').trim();
+      return { code: code, date: date, title: title, shortText: shortText, text: text, link: link };
+    }).filter(function(i) { return i.title && i.title.indexOf('#N/A') === -1 && i.code; });
+    if (items.length > 0) renderNews(items);
+    else {
+      var track = document.getElementById('newsTrack');
+      if (track) track.innerHTML = '';
+    }
+  })
+  .catch(function() {
+    var track = document.getElementById('newsTrack');
+    if (track) track.innerHTML = '';
+  });</script>
+</body>
+</html>
