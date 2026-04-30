@@ -849,28 +849,41 @@
   // Download
   async function downloadCard() {
     const canvas = document.getElementById('card-canvas');
+    const outer = document.querySelector('.card-outer');
     const btn = document.querySelector('.btn-download');
     btn.textContent = 'Wird erstellt …';
     btn.disabled = true;
 
+    // Save current styles
+    const prevCanvasWidth = canvas.style.width;
+    const prevCanvasHeight = canvas.style.height;
+    const prevOuterMaxWidth = outer.style.maxWidth;
+    const prevOuterWidth = outer.style.width;
+
     try {
-      // Target output: 2600px wide regardless of device
-      // On mobile, canvas.offsetWidth is smaller (e.g. 340px) → scale needs to be higher
-      // On desktop, canvas.offsetWidth is larger (e.g. 520px) → scale is lower
-      // Both result in the same pixel output (~2600px)
-      const targetPx = 2600;
-      const canvasWidth = canvas.offsetWidth;
-      const scale = Math.ceil(targetPx / canvasWidth);
+      // Force the card to render at exactly 520px regardless of screen size.
+      // This means mobile and desktop produce identical source elements → identical quality.
+      // scale:5 then gives 2600px output on all devices.
+      outer.style.maxWidth = '520px';
+      outer.style.width = '520px';
+      canvas.style.width = '520px';
+      canvas.style.height = '520px';
+
+      // Allow a short frame for layout to apply before capturing
+      await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
 
       const c = await html2canvas(canvas, {
-        scale: scale,
+        scale: 5,
         useCORS: false,
         allowTaint: true,
         backgroundColor: '#1a1a1a',
         logging: false,
         foreignObjectRendering: false,
-        imageTimeout: 15000
+        imageTimeout: 15000,
+        width: 520,
+        height: 520
       });
+
       const link = document.createElement('a');
       link.download = 'HNHH-Apero-No13.png';
       link.href = c.toDataURL('image/png');
@@ -880,6 +893,12 @@
     } catch(err) {
       console.error('html2canvas error:', err);
       alert('Download fehlgeschlagen: ' + err.message);
+    } finally {
+      // Always restore original layout
+      canvas.style.width = prevCanvasWidth;
+      canvas.style.height = prevCanvasHeight;
+      outer.style.maxWidth = prevOuterMaxWidth;
+      outer.style.width = prevOuterWidth;
     }
 
     btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-3px;margin-right:8px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Als PNG herunterladen';
